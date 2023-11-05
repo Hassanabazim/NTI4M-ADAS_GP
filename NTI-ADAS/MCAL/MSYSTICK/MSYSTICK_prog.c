@@ -46,10 +46,10 @@ volatile u8 local_u8temp;
 ErrorState_t MSYSTICK_enInit(void)
 {
 	/*@beief 	that API use to pre configure the systick Prescaler */
-#if (STK_PRESCALER == STK_AHB_PRESCALER)
+#if (MSYSTICK_PRESCALER == MSYSTICK_AHB_PRESCALER)
 	SET_BIT(STK->STK_CTRL, CLKSOURCE);
 
-#elif(STK_PRESCALER == STK_AHB_DIV8_PRESCALER)
+#elif(MSYSTICK_PRESCALER == MSYSTICK_AHB_DIV8_PRESCALER)
 	CLR_BIT(STK->STK_CTRL, CLKSOURCE);
 
 #else

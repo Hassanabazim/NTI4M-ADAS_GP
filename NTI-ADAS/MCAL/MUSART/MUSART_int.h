@@ -79,6 +79,7 @@ typedef enum
 #define MUSART_BAUDRATE_2400_CLK_8M       0X0D05
 #define MUSART_BAUDRATE_4800_CLK_8M       0X0683
 #define MUSART_BAUDRATE_9600_CLK_8M       0X0341
+#define MUSART_BAUDRATE_115200_CLK_8M     0x0045
 #define MUSART_BAUDRATE_19200_CLK_8M      0X01A1
 
 /**********************************************************************************************************************

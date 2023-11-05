@@ -17,6 +17,7 @@
 #include "REGISTERS.h"
 #include "BIT_MATH.h"
 #include "MADC_int.h"
+#include "lcd.h"
 #include "MADC_config.h"
 #include "MADC_priv.h"
 
@@ -48,29 +49,28 @@ ErrorState_t MADC_enInit(MADC_INIT_t *ptr_u8config)
 		ADC->ADC_JSQR &= MADC_INJ_CHANNELS_MASK;
 		ADC->ADC_JSQR |= ptr_u8config->Inj_ChNum << 20;
 
-		ADC->ADC_CR2 &= MADC_GREG_SOURCE_MASK;
-		ADC->ADC_CR2 |= ptr_u8config->RegGP_trig << 17;
 		if (ptr_u8config->RegGP_trig != MADC_SWSTART)
 		{
 			SET_BIT(ADC->ADC_CR2, EXTTRIG);
+			ADC->ADC_CR2 &= MADC_GREG_SOURCE_MASK;
+			ADC->ADC_CR2 |= ptr_u8config->RegGP_trig << 17;
 		}
 
-		ADC->ADC_CR2 &= MADC_GINJ_SOURCE_MASK;
-		ADC->ADC_CR2 |= ptr_u8config->InjGP_trig << 12;
 		if (ptr_u8config->InjGP_trig != MADC_JSWSTART)
 		{
 			SET_BIT(ADC->ADC_CR2, JEXTTRIG);
+			ADC->ADC_CR2 &= MADC_GINJ_SOURCE_MASK;
+			ADC->ADC_CR2 |= ptr_u8config->InjGP_trig << 12;
 		}
-
 
 
 		switch(ptr_u8config->Conv_Mood)
 		{
-		case MADC_DISABLE:
+		case MADC_SINGLE_CONV:
 			CLR_BIT(ADC->ADC_CR2, CONT);
 			break;
-		case MADC_ENABLE:
-			CLR_BIT(ADC->ADC_CR2, CONT);
+		case MADC_CONTINUES_CONV:
+			SET_BIT(ADC->ADC_CR2, CONT);
 			break;
 		default:
 			local_state = OUT_OF_RANG_ERR;
@@ -82,12 +82,11 @@ ErrorState_t MADC_enInit(MADC_INIT_t *ptr_u8config)
 			CLR_BIT(ADC->ADC_CR1, SCAN);
 			break;
 		case MADC_ENABLE:
-			CLR_BIT(ADC->ADC_CR1, SCAN);
+			SET_BIT(ADC->ADC_CR1, SCAN);
 			break;
 		default:
 			local_state = OUT_OF_RANG_ERR;
 		}
-
 
 		switch (ptr_u8config->Data_Alignment)
 		{
@@ -100,9 +99,6 @@ ErrorState_t MADC_enInit(MADC_INIT_t *ptr_u8config)
 		default:
 			local_state = OUT_OF_RANG_ERR;
 		}
-
-		/* Enable the ADC Peripherial */
-		SET_BIT(ADC->ADC_CR2, ADON);
 
 		/* Enable the ADC Calibration */
 		SET_BIT(ADC->ADC_CR2, CAL);
@@ -125,12 +121,20 @@ ErrorState_t MADC_enInit(MADC_INIT_t *ptr_u8config)
 ErrorState_t MADC_enSampleChannel(MADC_CHANNELS_t copy_u8channel, MADC_SAMPLE_t copy_u8sample)
 {
 	ErrorState_t local_state = SUCCESS;
-	u8 local_u8RegIndex = copy_u8channel / 10;
 
-	if (copy_u8channel < MADC_channel17)
+
+	if (copy_u8channel < MADC_channel10)
 	{
-		ADC->ADC_SMPR[local_u8RegIndex] &= MADC_SAMPLE_CHANNEL_MASK ;
-		ADC->ADC_SMPR[local_u8RegIndex] |= copy_u8sample << (copy_u8channel * MADC_SAMPLE_OFFSET);
+		ADC->ADC_SMPR[1] &= ~(MADC_SAMPLE_CHANNEL_MASK << (copy_u8channel * MADC_SAMPLE_OFFSET)) ;
+		ADC->ADC_SMPR[1] |= copy_u8sample << (copy_u8channel * MADC_SAMPLE_OFFSET);
+
+	}
+	else if (copy_u8channel <= MADC_channel17)
+	{
+		copy_u8channel -= MADC_channel10;
+		ADC->ADC_SMPR[0] &= ~(MADC_SAMPLE_CHANNEL_MASK << (copy_u8channel * MADC_SAMPLE_OFFSET)) ;
+		ADC->ADC_SMPR[0] |= copy_u8sample << (copy_u8channel * MADC_SAMPLE_OFFSET);
+
 	}
 	else
 	{
@@ -142,7 +146,7 @@ ErrorState_t MADC_enSampleChannel(MADC_CHANNELS_t copy_u8channel, MADC_SAMPLE_t 
 
 ErrorState_t MADC_enRegSingleChannel(MADC_CHANNELS_t copy_u8channel, u16 *ptr_u16data)
 {
-	ErrorState_t local_state = SUCCESS;
+	u8 local_state = SUCCESS ;
 
 	if(ptr_u16data != NULL)
 	{
@@ -151,14 +155,15 @@ ErrorState_t MADC_enRegSingleChannel(MADC_CHANNELS_t copy_u8channel, u16 *ptr_u1
 			ADC->ADC_SQR[2] = 0;
 			ADC->ADC_SQR[2] = copy_u8channel;
 
-			/*2. start conversion */
-			SET_BIT(ADC->ADC_CR2, SWSTART);
+			MADC_RegEnable();
 
 			/*3. wait till the conversion is finished */
 			while (!(GET_BIT(ADC->ADC_SR, EOC)));
 
+			CLR_BIT(ADC->ADC_CR2, ADON);
+
 			/* 4. get the data from Data register and assign it to ptr_data */
-			ptr_u16data = (u16*)ADC->ADC_DR;
+			*ptr_u16data = ADC->ADC_DR;
 		}
 
 		else
@@ -183,6 +188,7 @@ ErrorState_t MADC_enInjSingleChannel(MADC_CHANNELS_t copy_u8channel, u16 *ptr_u1
 	{
 		if (copy_u8channel < MADC_channel17)
 		{
+
 			ADC->ADC_JSQR |= copy_u8channel;
 
 			/*2. start conversion */
@@ -192,7 +198,7 @@ ErrorState_t MADC_enInjSingleChannel(MADC_CHANNELS_t copy_u8channel, u16 *ptr_u1
 			while (!(GET_BIT(ADC->ADC_SR, JEOC)));
 
 			/* 4. get the data from Data register and assign it to ptr_data */
-			ptr_u16data = (u16*)ADC->ADC_JDR[0];
+			*ptr_u16data = ADC->ADC_JDR[0];
 		}
 
 		else
@@ -241,33 +247,35 @@ ErrorState_t MADC_enRegGroupChannel(MADC_CHANNELS_t copy_u8channel, u8 copy_u8in
 	{
 		if (copy_u8index < 6)
 		{
-			ADC->ADC_SQR[2] &= MADC_GROUP_CHANNELS_MASK<< (copy_u8index * MADC_CHANNEL_OFFSET);
-			ADC->ADC_SQR[2] = copy_u8channel<< (copy_u8index * MADC_CHANNEL_OFFSET);
+			ADC->ADC_SQR[2] &= (MADC_GROUP_CHANNELS_MASK<< (copy_u8index * MADC_CHANNEL_OFFSET));
+			ADC->ADC_SQR[2] |= (copy_u8channel<< (copy_u8index * MADC_CHANNEL_OFFSET));
 		}
 
 		else if (copy_u8index < 12)
 		{
 			copy_u8index -= 6;
-			ADC->ADC_SQR[1] &= MADC_GROUP_CHANNELS_MASK<< (copy_u8index * MADC_CHANNEL_OFFSET);
-			ADC->ADC_SQR[1] = copy_u8channel<< (copy_u8index * MADC_CHANNEL_OFFSET);
+			ADC->ADC_SQR[1] &= (MADC_GROUP_CHANNELS_MASK << (copy_u8index * MADC_CHANNEL_OFFSET));
+			ADC->ADC_SQR[1] |= (copy_u8channel<< (copy_u8index * MADC_CHANNEL_OFFSET));
 		}
 
 		else if (copy_u8index < 16)
 		{
 			copy_u8index -= 12;
-			ADC->ADC_SQR[0] &= MADC_GROUP_CHANNELS_MASK<< (copy_u8index * MADC_CHANNEL_OFFSET);
-			ADC->ADC_SQR[0] = copy_u8channel<< (copy_u8index * MADC_CHANNEL_OFFSET);
+			ADC->ADC_SQR[0] &=(MADC_GROUP_CHANNELS_MASK<< (copy_u8index * MADC_CHANNEL_OFFSET));
+			ADC->ADC_SQR[0] |= (copy_u8channel<< (copy_u8index * MADC_CHANNEL_OFFSET));
 		}
 		else
 		{
 
 		}
 
+		MADC_RegEnable();
+
 		/*2. wait till the conversion is finished */
 		while (!(GET_BIT(ADC->ADC_SR, EOC)));
 
 		/* 3. get the data from Data register and assign it to ptr_data */
-		ptr_u16data = (u16*)ADC->ADC_DR;
+		*ptr_u16data = ADC->ADC_DR;
 	}
 
 	else
@@ -323,6 +331,20 @@ ErrorState_t MADC_enIntCallBack(void(*CallBack_ptr)(void))
 		local_state = NULL_PTR_ERR;
 	}
 	return local_state;
+}
+
+
+static void MADC_RegEnable(void)
+{
+	SET_BIT(ADC->ADC_CR2, ADON);
+
+	ADC->ADC_SR = 0;
+
+	/* Enable the ADC Peripherial */
+	SET_BIT(ADC->ADC_CR2, ADON);
+
+	/*2. start conversion */
+	SET_BIT(ADC->ADC_CR2, SWSTART);
 }
 
 /********************************************************************************

@@ -14,6 +14,7 @@
  ********************************************************************************/
 typedef enum
 {
+	MADC_channel0,
 	MADC_channel1,
 	MADC_channel2,
 	MADC_channel3,
@@ -35,6 +36,10 @@ typedef enum
 
 typedef enum
 {
+	MADC_SINGLE_CONV,
+	MADC_CONTINUES_CONV,
+	MADC_RIGHT_ALLIGN,
+	MADC_LEFT_ALLIGN,
 	MADC_DISABLE,
 	MADC_ENABLE
 }MADC_CONFIG_t;

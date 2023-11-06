@@ -1,0 +1,3 @@
+HIR_prog.c:6:6:IR_Sensor_Init	8	static
+HIR_prog.c:12:15:IR_Sensor_ReadLeft	16	static
+HIR_prog.c:21:15:IR_Sensor_ReadRight	16	static

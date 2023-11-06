@@ -1,12 +1,11 @@
 
+
+
+#include "APP_int.h"
+
 int main(void)
 {
 
 
 
-    /* Loop forever */
-	while (1)
-	{
-		
-	}
 }

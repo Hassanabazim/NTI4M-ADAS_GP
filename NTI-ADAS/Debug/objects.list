@@ -1,4 +1,8 @@
 "APP/APP_prog.o"
+"HAL/HIR/HIR_prog.o"
+"HAL/HLCD16x2/lcd.o"
+"HAL/HLM35 TEMP/LM35_prog.o"
+"HAL/HRAIN SENSOR/RainSensor_prog.o"
 "MCAL/MADC/MADC_prog.o"
 "MCAL/MAFIO/MAFIO_prog.o"
 "MCAL/MEXTI/MEXTI_prog.o"

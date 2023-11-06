@@ -15,7 +15,8 @@
 #ifndef MGPIO_MGPIO_INT_H_
 #define MGPIO_MGPIO_INT_H_
 
-
+#include "ERROR_STATE.h"
+#include "STD_TYPES.h"
 /**********************************************************************************************************************
  *  GLOBAL DATA TYPES AND STRUCTURES
  *********************************************************************************************************************/
@@ -84,7 +85,7 @@ ErrorState_t MGPIO_enSetPinDirection(MGPIO_PORT_t copy_u8port, MGPIO_PIN_t copy_
 ErrorState_t MGPIO_enSetPinValue(MGPIO_PORT_t copy_u8port, MGPIO_PIN_t copy_u8pin, MGPIO_VALUE_t copy_u8Value);
 ErrorState_t MGPIO_enTogglePin(MGPIO_PORT_t copy_u8port, MGPIO_PIN_t copy_u8pin);
 ErrorState_t MGPIO_enGetPinValue(MGPIO_PORT_t copy_u8port, MGPIO_PIN_t copy_u8pin, MGPIO_VALUE_t *pinValue);
-ErrorState_t MGPIO_enSetPortDirection(MGPIO_ID_t copy_u8CRID,MGPIO_PORT_t copy_u8port,  u8 copy_u8Mode);
+ErrorState_t MGPIO_enSetPortDirection(MGPIO_ID_t copy_u8CRID,MGPIO_PORT_t copy_u8port, u8 copy_u8Mode);
 ErrorState_t MGPIO_enSetPortValue(MGPIO_ID_t copy_u8CRID, MGPIO_PORT_t copy_u8port, MGPIO_VALUE_t copy_u8Value);
 ErrorState_t MGPIO_enSetResetPin(MGPIO_PORT_t copy_u8port,MGPIO_PIN_t copy_u8pin, MGPIO_MODE_t copy_u8Mode);
 ErrorState_t MGPIO_enLockPin(MGPIO_PORT_t copy_u8port, MGPIO_PIN_t copy_u8pin);

@@ -9,6 +9,7 @@ S_SRCS :=
 C_SRCS := 
 S_UPPER_SRCS := 
 O_SRCS := 
+OBJCOPY_HEX := 
 SIZE_OUTPUT := 
 OBJDUMP_LIST := 
 EXECUTABLES := 
@@ -21,6 +22,10 @@ OBJCOPY_BIN :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 APP \
+HAL/HIR \
+HAL/HLCD16x2 \
+HAL/HLM35\ TEMP \
+HAL/HRAIN\ SENSOR \
 MCAL/MADC \
 MCAL/MAFIO \
 MCAL/MEXTI \

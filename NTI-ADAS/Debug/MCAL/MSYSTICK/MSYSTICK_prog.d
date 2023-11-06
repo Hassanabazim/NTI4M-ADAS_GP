@@ -1,21 +1,21 @@
 MCAL/MSYSTICK/MSYSTICK_prog.o: ../MCAL/MSYSTICK/MSYSTICK_prog.c \
- C:/Users/Hassa/git/NTI4M-ADAS_GP/NTI-ADAS/LIB/STD_TYPES.h \
- C:/Users/Hassa/git/NTI4M-ADAS_GP/NTI-ADAS/LIB/BIT_MATH.h \
- C:/Users/Hassa/git/NTI4M-ADAS_GP/NTI-ADAS/LIB/REGISTERS.h \
- C:/Users/Hassa/git/NTI4M-ADAS_GP/NTI-ADAS/LIB/ERROR_STATE.h \
- C:/Users/Hassa/git/NTI4M-ADAS_GP/NTI-ADAS/MCAL/MRCC/MRCC_int.h \
+ D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/LIB/STD_TYPES.h \
+ D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/LIB/BIT_MATH.h \
+ D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/LIB/REGISTERS.h \
+ D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/LIB/ERROR_STATE.h \
+ D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/MCAL/MRCC/MRCC_int.h \
  ../MCAL/MSYSTICK/MSYSTICK_config.h ../MCAL/MSYSTICK/MSYSTICK_int.h \
  ../MCAL/MSYSTICK/MSYSTICK_priv.h
 
-C:/Users/Hassa/git/NTI4M-ADAS_GP/NTI-ADAS/LIB/STD_TYPES.h:
+D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/LIB/STD_TYPES.h:
 
-C:/Users/Hassa/git/NTI4M-ADAS_GP/NTI-ADAS/LIB/BIT_MATH.h:
+D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/LIB/BIT_MATH.h:
 
-C:/Users/Hassa/git/NTI4M-ADAS_GP/NTI-ADAS/LIB/REGISTERS.h:
+D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/LIB/REGISTERS.h:
 
-C:/Users/Hassa/git/NTI4M-ADAS_GP/NTI-ADAS/LIB/ERROR_STATE.h:
+D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/LIB/ERROR_STATE.h:
 
-C:/Users/Hassa/git/NTI4M-ADAS_GP/NTI-ADAS/MCAL/MRCC/MRCC_int.h:
+D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/MCAL/MRCC/MRCC_int.h:
 
 ../MCAL/MSYSTICK/MSYSTICK_config.h:
 

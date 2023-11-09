@@ -25,15 +25,15 @@
  *********************************************************************************************************************/
 
 /******************************************************************************
-* \Syntax          : ErrorState_t MRCC_enSysClkINIT(void)
-* \Description     : Selecting and Initialize the SysClock
-*
-* \Sync\Async      : Synchronous
-* \Reentrancy      : Non Reentrant
-* \Parameters (in) : None
-* \Return value:   : ErrorState_t  SUCEESS
-*
-*******************************************************************************/
+ * \Syntax          : ErrorState_t MRCC_enSysClkINIT(void)
+ * \Description     : Selecting and Initialize the SysClock
+ *
+ * \Sync\Async      : Synchronous
+ * \Reentrancy      : Non Reentrant
+ * \Parameters (in) : None
+ * \Return value:   : ErrorState_t  SUCEESS
+ *
+ *******************************************************************************/
 ErrorState_t MRCC_enSysClkINIT(void)
 {
 	/** CLK source is HSE CRYSTAL **/
@@ -112,7 +112,7 @@ ErrorState_t MRCC_enSysClkINIT(void)
 	SET_BIT(RCC->RCC_CR, PLLON);
 
 	/* 4. wait till HSE is READY 'settling time finished', stable */
-	while (!(GET_BIT(RCC->RCC_CR, PLLRDY)));
+	while(!(GET_BIT(RCC->RCC_CR, PLLRDY)));
 
 	/* 5. if CSS is On, set the CSS pin */
 #if(MRCC_CSS_EN == RCC_CSS_ON)
@@ -122,7 +122,7 @@ ErrorState_t MRCC_enSysClkINIT(void)
 #endif
 
 	/* 6. Enable System switch clock with PLL*/
-	SET_BIT(RCC->RCC_CFGR, SWC)<<1;
+	SET_BIT(RCC->RCC_CFGR, SWC<<1);
 
 #else
 #error("WRONG CLK TYPE");
@@ -139,6 +139,10 @@ ErrorState_t MRCC_enSysClkINIT(void)
 	RCC->RCC_CFGR &= MRCC_APB2_MASK;
 	RCC->RCC_CFGR |= MRCC_APB2_PRESCALER_MODE;
 
+	/*MASK the ADC clk and set the value of the chosen prescaler*/
+	RCC->RCC_CFGR &= MRCC_ADC_MASK;
+	RCC->RCC_CFGR |= MRCC_ADC_PRESCALER_MODE;
+
 #if (MRCC_MCO_EN == MRCC_MCO_ON)
 	{
 		RCC->RCC_CFGR &= MRCC_MCO_MASK;
@@ -150,15 +154,15 @@ ErrorState_t MRCC_enSysClkINIT(void)
 }
 
 /******************************************************************************
-* \Syntax          : ErrorState_t MRCC_enEnablePeripheralCLK(u8 copy_u8Peripheral)
-* \Description     : Enable the Peripheral clock
-*
-* \Sync\Async      : Synchronous
-* \Reentrancy      : Non Reentrant
-* \Parameters (in) : copy_u8Peripheral
-* \Return value:   : ErrorState_t  -> SUCEESS
-* 								   -> OUT_OF_RANG_ERR
-*******************************************************************************/
+ * \Syntax          : ErrorState_t MRCC_enEnablePeripheralCLK(u8 copy_u8Peripheral)
+ * \Description     : Enable the Peripheral clock
+ *
+ * \Sync\Async      : Synchronous
+ * \Reentrancy      : Non Reentrant
+ * \Parameters (in) : copy_u8Peripheral
+ * \Return value:   : ErrorState_t  -> SUCEESS
+ * 								   -> OUT_OF_RANG_ERR
+ *******************************************************************************/
 
 ErrorState_t MRCC_enEnablePeripheralCLK(u8 copy_u8Peripheral)
 {
@@ -189,15 +193,15 @@ ErrorState_t MRCC_enEnablePeripheralCLK(u8 copy_u8Peripheral)
 
 
 /******************************************************************************
-* \Syntax          : ErrorState_t MRCC_enDisablePeripheralCLK(u8 copy_u8Peripheral)
-* \Description     : Enable the Peripheral clock
-*
-* \Sync\Async      : Synchronous
-* \Reentrancy      : Non Reentrant
-* \Parameters (in) : copy_u8Peripheral
-* \Return value:   : ErrorState_t  -> SUCEESS
-* 								   -> OUT_OF_RANG_ERR
-*******************************************************************************/
+ * \Syntax          : ErrorState_t MRCC_enDisablePeripheralCLK(u8 copy_u8Peripheral)
+ * \Description     : Enable the Peripheral clock
+ *
+ * \Sync\Async      : Synchronous
+ * \Reentrancy      : Non Reentrant
+ * \Parameters (in) : copy_u8Peripheral
+ * \Return value:   : ErrorState_t  -> SUCEESS
+ * 								   -> OUT_OF_RANG_ERR
+ *******************************************************************************/
 
 ErrorState_t MRCC_enDisablePeripheralCLK(u8 copy_u8Peripheral)
 {

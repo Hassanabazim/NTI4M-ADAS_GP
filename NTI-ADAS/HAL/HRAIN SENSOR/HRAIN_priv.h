@@ -5,11 +5,11 @@
  *      Author: Mohamed Samir
  */
 
-#ifndef RAINSENSOR_PRV_H_
-#define RAINSENSOR_PRV_H_
+#ifndef HRAIN_PRIV_H_
+#define HRAIN_PRIV_H_
 
 
 #define HRAIN_SENSOR_RESOULTION		4096
 #define HRAIN_SENSOR_PERCENTAGE		100
 
-#endif /* RAINSENSOR_PRV_H_ */
+#endif /* HRAIN_PRIV_H_ */

@@ -16,7 +16,7 @@
 #define APP_CONFIG_H_
 
 
-
+#define APPLICATION		ANALOG_SENORS_APP
 
 #endif /* APP_CONFIG_H_ */
 

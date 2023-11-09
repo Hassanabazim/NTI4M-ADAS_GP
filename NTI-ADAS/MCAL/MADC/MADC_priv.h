@@ -58,7 +58,6 @@
 
 
 
-static void MADC_RegEnable(void);
 
 
 #endif /* MADC_MADC_PRIV_H_ */

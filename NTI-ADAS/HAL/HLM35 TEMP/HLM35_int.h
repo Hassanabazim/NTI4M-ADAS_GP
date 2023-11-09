@@ -1,12 +1,29 @@
 /*
- * LDR_AdcChannels.h
+ * LM35_interface.h
  *
- *  Created on: Oct 26, 2023
+ *  Created on: Oct 25, 2023
  *      Author: Mohamed Samir
  */
 
-#ifndef LM35_PRIV_H_
-#define LM35_PRIV_H_
+#ifndef HLM35_INT_H_
+#define HLM35_INT_H_
+
+
+/*******************************************
+ * This function Gets the Temperature direct
+ *
+ * Return :  1- Error State
+ *			 2- The Temperature
+ *
+ ********************************************/
+ErrorState_t LM35_u16GetTemperature(u8 *Copy_u8pLM35Temp);
+
+
+/*******************************************
+ * This function Initialize the LM35
+ *
+ ********************************************/
+ErrorState_t LM35_u8TemperatureInit(MADC_GROUP_t *Copy_pStructLM35);
 
 
 /***********************************************************************************************
@@ -21,4 +38,5 @@
  ***********************************************************************************************/
 u16 ADC_u16ConvertToVolt(u16 Copy_u16ADC_Reading);
 
-#endif /* LM35_PRIV_H_ */
+
+#endif /* HLM35_INT_H_ */

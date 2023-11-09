@@ -5,13 +5,14 @@
  *      Author: Mohamed Samir
  */
 
+
 #include "STD_TYPES.h"
 #include "ERROR_STATE.h"
+#include "MGPIO_int.h"
 #include "MADC_int.h"
-#include "LM35_interface.h"
-#include "LM35_cfg.h"
-#include "LM35_interface.h"
-#include "LM35_priv.h"
+#include "HLM35_int.h"
+#include "HLM35_config.h"
+#include "HLM35_priv.h"
 
 
 
@@ -20,12 +21,18 @@
  * This function Initialize the LM35
  *
  ********************************************/
-ErrorState_t LM35_u8TemperatureInit(MADC_INIT_t *Copy_pStructLM35)
+ErrorState_t LM35_u8TemperatureInit(MADC_GROUP_t *Copy_pStructLM35)
 {
 	u8 Local_u8ErrorState = SUCCESS;
 	if(NULL != Copy_pStructLM35)	/* check the validation of the address */
 	{
-		MADC_enInit(Copy_pStructLM35);
+		/*GPIO for LM35 */
+		MGPIO_enSetPinDirection(HLM35_PORT, HLM35_PIN, IN_ANALOG);
+
+//		Copy_pStructLM35->channel = MADC_channel0;
+//		Copy_pStructLM35->Index = MADC_INDEX_0;
+//		Copy_pStructLM35->Sample = MADC_SAMPLE_13_5CYCLE;
+		MADC_enRegGroupChannel_Init(Copy_pStructLM35);
 	}
 	else
 	{
@@ -43,35 +50,27 @@ ErrorState_t LM35_u8TemperatureInit(MADC_INIT_t *Copy_pStructLM35)
  *			 2- The Temperature
  *
  ********************************************/
-ErrorState_t LM35_u16GetTemperature(LM35_Object_t *Copy_StructLM35  ,u8 *Copy_u8pLM35Temp)
+ErrorState_t LM35_u16GetTemperature(u8 *Copy_u8pLM35Temp)
 {
 	ErrorState_t Local_u8ErrorState = SUCCESS;
 	u16 Local_u16AdcChannelReading, Local_u16AdcVoltageReading ;
 
+	/* 1- Read The voltage from ADC */
+	MADC_enRegChannel_Conv(&Local_u16AdcChannelReading);
 
-	/* 1- check the validation of the pointer to struct */
-	if(NULL != Copy_StructLM35)
+	/*2- Converts the reading to Volt */
+	Local_u16AdcVoltageReading = ADC_u16ConvertToVolt(Local_u16AdcChannelReading);
+
+	/*3- Return the Temperature , but first check the Copy_u8pLM35Temp validation  */
+	if (NULL != Copy_u8pLM35Temp) //check the validation of the address
 	{
-		/* 2- Read The voltage from ADC */
-		MADC_enSampleChannel(Copy_StructLM35 -> LM35_ADC_Channel ,MADC_SAMPLE_239_5CYCLE );
-		MADC_enRegSingleChannel(Copy_StructLM35 -> LM35_ADC_Channel ,&Local_u16AdcChannelReading );
-		/*3- Converts the reading to Volt */
-		Local_u16AdcVoltageReading = ADC_u16ConvertToVolt(Local_u16AdcChannelReading);
-
-		/*4- Return the Temperature , but first check the Copy_u8pLM35Temp validation  */
-		if (NULL != Copy_u8pLM35Temp) //check the validation of the address
-		{
-			*Copy_u8pLM35Temp = Local_u16AdcVoltageReading / (u16)( Copy_StructLM35 ->LM35_Sensitivity );
-		}
-		else //the address is not valid
-		{
-			Local_u8ErrorState  = NULL_PTR_ERR;
-		}
+		*Copy_u8pLM35Temp = Local_u16AdcVoltageReading / (u16)(LM35_Sensitivity);
 	}
 	else //the address is not valid
 	{
 		Local_u8ErrorState  = NULL_PTR_ERR;
 	}
+
 	return Local_u8ErrorState;
 }
 

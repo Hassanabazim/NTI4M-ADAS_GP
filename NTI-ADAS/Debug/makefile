@@ -21,7 +21,7 @@ RM := rm -rf
 -include MCAL/MADC/subdir.mk
 -include HAL/HRAIN\ SENSOR/subdir.mk
 -include HAL/HLM35\ TEMP/subdir.mk
--include HAL/HLCD16x2/subdir.mk
+-include HAL/HLCD/subdir.mk
 -include HAL/HIR/subdir.mk
 -include APP/subdir.mk
 -include subdir.mk

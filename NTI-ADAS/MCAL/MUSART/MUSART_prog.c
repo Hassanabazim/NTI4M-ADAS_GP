@@ -259,7 +259,7 @@ ErrorState_t MUSART_enBusySendString(MUSART_t copy_u8USARTnum, u8 *copy_u8Data)
  * 									-> OUT_OF_RANG_ERR
  * 									-> NULL_PTR_ERR
  *******************************************************************************/
-ErrorState_t MUSART_enBusyReceiveByte(MUSART_t copy_u8USARTnum, u8 *ptr_u8Data)
+u8 MUSART_enBusyReceiveByte(MUSART_t copy_u8USARTnum)
 {
 	/* @brief 	This API use the Polling Technique to Receive the data
 	 *	1. waiting of RX Not Empty Flag to be set
@@ -267,24 +267,18 @@ ErrorState_t MUSART_enBusyReceiveByte(MUSART_t copy_u8USARTnum, u8 *ptr_u8Data)
 	 * 	3. Assign the value into the ptr_u8Data to be returned as ptr
 	 * 	4. the flag is cleared by reading the Data from the register		*/
 	ErrorState_t local_state = SUCCESS;
+	u8 local_u8byte;
 	if (copy_u8USARTnum <= MUSART3)
 	{
-		if (ptr_u8Data != NULL)
-		{
-			while (!(GET_BIT(USART_CH[copy_u8USARTnum]->USART_SR, RXNE)));
-			*ptr_u8Data = USART_CH[copy_u8USARTnum]->USART_DR & MUSART_1BYTE;
-		}
-		else
-		{
-			local_state = NULL_PTR_ERR;
-		}
+		while (!(GET_BIT(USART_CH[copy_u8USARTnum]->USART_SR, RXNE)));
+		local_u8byte = USART_CH[copy_u8USARTnum]->USART_DR & MUSART_1BYTE;
 	}
 	else
 	{
-		local_state = OUT_OF_RANG_ERR;
+
 	}
 
-	return local_state;
+	return local_u8byte;
 }
 
 /******************************************************************************

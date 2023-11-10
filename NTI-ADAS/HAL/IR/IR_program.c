@@ -1,5 +1,5 @@
 
-#include "../../MCAL/MGPIO/MGPIO_int.h"
+#include "MGPIO_int.h"
 #include "IR_interface.h"
 #include "IR_config.h"
 

@@ -37,13 +37,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  000017a5  00000000  00000000  00023ae8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000248f  00000000  00000000  0002528d  2**0
+ 17 .debug_line   00002488  00000000  00000000  0002528d  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000060ca  00000000  00000000  0002771c  2**0
+ 18 .debug_str    000060cc  00000000  00000000  00027715  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  0002d7e6  2**0
+ 19 .comment      00000053  00000000  00000000  0002d7e1  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00000ae8  00000000  00000000  0002d83c  2**2
+ 20 .debug_frame  00000ae8  00000000  00000000  0002d834  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -887,10 +887,6 @@ ErrorState_t LM35_u8TemperatureInit(MADC_GROUP_t *Copy_pStructLM35)
  800067c:	2100      	movs	r1, #0
  800067e:	2000      	movs	r0, #0
  8000680:	f000 fb20 	bl	8000cc4 <MGPIO_enSetPinDirection>
-
-//		Copy_pStructLM35->channel = MADC_channel0;
-//		Copy_pStructLM35->Index = MADC_INDEX_0;
-//		Copy_pStructLM35->Sample = MADC_SAMPLE_13_5CYCLE;
 		MADC_enRegGroupChannel_Init(Copy_pStructLM35);
  8000684:	6878      	ldr	r0, [r7, #4]
  8000686:	f000 f941 	bl	800090c <MADC_enRegGroupChannel_Init>

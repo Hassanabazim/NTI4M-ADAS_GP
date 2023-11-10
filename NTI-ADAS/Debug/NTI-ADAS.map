@@ -8,6 +8,14 @@ c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externalt
                               c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o (__libc_init_array)
 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memset.o)
                               c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o (memset)
+c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+                              HAL/RPLIDAR/RPLIDAR_program.o (__aeabi_i2d)
+c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivdf3.o)
+                              HAL/RPLIDAR/RPLIDAR_program.o (__aeabi_ddiv)
+c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+                              HAL/RPLIDAR/RPLIDAR_program.o (__aeabi_d2f)
+c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
+                              HAL/RPLIDAR/RPLIDAR_program.o (__aeabi_fcmplt)
 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(_exit.o)
                               c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-exit.o) (_exit)
 
@@ -108,6 +116,112 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x22 HAL/HRAIN SENSOR/HRAIN_prog.o
  .debug_macro   0x0000000000000000       0x64 HAL/HRAIN SENSOR/HRAIN_prog.o
  .debug_macro   0x0000000000000000       0x22 HAL/HRAIN SENSOR/HRAIN_prog.o
+ .group         0x0000000000000000        0xc HAL/IR/IR_program.o
+ .group         0x0000000000000000        0xc HAL/IR/IR_program.o
+ .group         0x0000000000000000        0xc HAL/IR/IR_program.o
+ .group         0x0000000000000000        0xc HAL/IR/IR_program.o
+ .text          0x0000000000000000        0x0 HAL/IR/IR_program.o
+ .data          0x0000000000000000        0x0 HAL/IR/IR_program.o
+ .bss           0x0000000000000000        0x0 HAL/IR/IR_program.o
+ .text.IR_voidInit
+                0x0000000000000000       0x1c HAL/IR/IR_program.o
+ .text.IR_IR_PinValueReadLeft
+                0x0000000000000000       0x46 HAL/IR/IR_program.o
+ .text.IR_IR_PinValueReadRight
+                0x0000000000000000       0x46 HAL/IR/IR_program.o
+ .debug_info    0x0000000000000000      0x205 HAL/IR/IR_program.o
+ .debug_abbrev  0x0000000000000000       0xae HAL/IR/IR_program.o
+ .debug_aranges
+                0x0000000000000000       0x30 HAL/IR/IR_program.o
+ .debug_ranges  0x0000000000000000       0x20 HAL/IR/IR_program.o
+ .debug_macro   0x0000000000000000       0x4a HAL/IR/IR_program.o
+ .debug_macro   0x0000000000000000      0xaa2 HAL/IR/IR_program.o
+ .debug_macro   0x0000000000000000       0x10 HAL/IR/IR_program.o
+ .debug_macro   0x0000000000000000       0x5e HAL/IR/IR_program.o
+ .debug_macro   0x0000000000000000       0x2e HAL/IR/IR_program.o
+ .debug_line    0x0000000000000000      0x1b4 HAL/IR/IR_program.o
+ .debug_str     0x0000000000000000     0x317f HAL/IR/IR_program.o
+ .comment       0x0000000000000000       0x54 HAL/IR/IR_program.o
+ .debug_frame   0x0000000000000000       0x74 HAL/IR/IR_program.o
+ .ARM.attributes
+                0x0000000000000000       0x2d HAL/IR/IR_program.o
+ .group         0x0000000000000000        0xc HAL/PIR/PIR_interface.o
+ .group         0x0000000000000000        0xc HAL/PIR/PIR_interface.o
+ .group         0x0000000000000000        0xc HAL/PIR/PIR_interface.o
+ .group         0x0000000000000000        0xc HAL/PIR/PIR_interface.o
+ .group         0x0000000000000000        0xc HAL/PIR/PIR_interface.o
+ .text          0x0000000000000000        0x0 HAL/PIR/PIR_interface.o
+ .data          0x0000000000000000        0x0 HAL/PIR/PIR_interface.o
+ .bss           0x0000000000000000        0x0 HAL/PIR/PIR_interface.o
+ .text.PIR_voidInit
+                0x0000000000000000       0x12 HAL/PIR/PIR_interface.o
+ .text.PIR_u8GetPinVal
+                0x0000000000000000       0x2a HAL/PIR/PIR_interface.o
+ .debug_info    0x0000000000000000      0x175 HAL/PIR/PIR_interface.o
+ .debug_abbrev  0x0000000000000000       0x92 HAL/PIR/PIR_interface.o
+ .debug_aranges
+                0x0000000000000000       0x28 HAL/PIR/PIR_interface.o
+ .debug_ranges  0x0000000000000000       0x18 HAL/PIR/PIR_interface.o
+ .debug_macro   0x0000000000000000       0x4f HAL/PIR/PIR_interface.o
+ .debug_macro   0x0000000000000000      0xaa2 HAL/PIR/PIR_interface.o
+ .debug_macro   0x0000000000000000       0x10 HAL/PIR/PIR_interface.o
+ .debug_macro   0x0000000000000000       0x5e HAL/PIR/PIR_interface.o
+ .debug_macro   0x0000000000000000       0x1c HAL/PIR/PIR_interface.o
+ .debug_macro   0x0000000000000000       0x1c HAL/PIR/PIR_interface.o
+ .debug_line    0x0000000000000000      0x155 HAL/PIR/PIR_interface.o
+ .debug_str     0x0000000000000000     0x3120 HAL/PIR/PIR_interface.o
+ .comment       0x0000000000000000       0x54 HAL/PIR/PIR_interface.o
+ .debug_frame   0x0000000000000000       0x50 HAL/PIR/PIR_interface.o
+ .ARM.attributes
+                0x0000000000000000       0x2d HAL/PIR/PIR_interface.o
+ .group         0x0000000000000000        0xc HAL/RPLIDAR/RPLIDAR_program.o
+ .group         0x0000000000000000        0xc HAL/RPLIDAR/RPLIDAR_program.o
+ .group         0x0000000000000000        0xc HAL/RPLIDAR/RPLIDAR_program.o
+ .group         0x0000000000000000        0xc HAL/RPLIDAR/RPLIDAR_program.o
+ .group         0x0000000000000000        0xc HAL/RPLIDAR/RPLIDAR_program.o
+ .group         0x0000000000000000        0xc HAL/RPLIDAR/RPLIDAR_program.o
+ .text          0x0000000000000000        0x0 HAL/RPLIDAR/RPLIDAR_program.o
+ .data          0x0000000000000000        0x0 HAL/RPLIDAR/RPLIDAR_program.o
+ .bss           0x0000000000000000        0x0 HAL/RPLIDAR/RPLIDAR_program.o
+ .data.Copy_uint8ARRGetHealt
+                0x0000000000000000        0xa HAL/RPLIDAR/RPLIDAR_program.o
+ .data.Copy_uint8ARRScanResponse
+                0x0000000000000000        0x7 HAL/RPLIDAR/RPLIDAR_program.o
+ .bss.Copy_floatAngle
+                0x0000000000000000        0x4 HAL/RPLIDAR/RPLIDAR_program.o
+ .bss.Copy_floatDistance
+                0x0000000000000000        0x4 HAL/RPLIDAR/RPLIDAR_program.o
+ .bss.flag_s    0x0000000000000000        0x1 HAL/RPLIDAR/RPLIDAR_program.o
+ .text.RPLIDAR_Check_error_tGetHealth
+                0x0000000000000000       0x94 HAL/RPLIDAR/RPLIDAR_program.o
+ .text.RPLIDAR_GetDescriptor
+                0x0000000000000000       0x80 HAL/RPLIDAR/RPLIDAR_program.o
+ .text.RPLIDAR_DescriptorCheck
+                0x0000000000000000       0x68 HAL/RPLIDAR/RPLIDAR_program.o
+ .text.RPLIDAR_voidScanResponse
+                0x0000000000000000      0x1ac HAL/RPLIDAR/RPLIDAR_program.o
+ .text.RPLIDAR_voidINT
+                0x0000000000000000       0x6a HAL/RPLIDAR/RPLIDAR_program.o
+ .text.func_check
+                0x0000000000000000       0x60 HAL/RPLIDAR/RPLIDAR_program.o
+ .debug_info    0x0000000000000000      0x42e HAL/RPLIDAR/RPLIDAR_program.o
+ .debug_abbrev  0x0000000000000000      0x167 HAL/RPLIDAR/RPLIDAR_program.o
+ .debug_aranges
+                0x0000000000000000       0x48 HAL/RPLIDAR/RPLIDAR_program.o
+ .debug_ranges  0x0000000000000000       0x38 HAL/RPLIDAR/RPLIDAR_program.o
+ .debug_macro   0x0000000000000000       0x6c HAL/RPLIDAR/RPLIDAR_program.o
+ .debug_macro   0x0000000000000000      0xaa2 HAL/RPLIDAR/RPLIDAR_program.o
+ .debug_macro   0x0000000000000000       0x10 HAL/RPLIDAR/RPLIDAR_program.o
+ .debug_macro   0x0000000000000000       0x5e HAL/RPLIDAR/RPLIDAR_program.o
+ .debug_macro   0x0000000000000000       0xb8 HAL/RPLIDAR/RPLIDAR_program.o
+ .debug_macro   0x0000000000000000       0x52 HAL/RPLIDAR/RPLIDAR_program.o
+ .debug_macro   0x0000000000000000       0x4c HAL/RPLIDAR/RPLIDAR_program.o
+ .debug_line    0x0000000000000000      0x472 HAL/RPLIDAR/RPLIDAR_program.o
+ .debug_str     0x0000000000000000     0x3776 HAL/RPLIDAR/RPLIDAR_program.o
+ .comment       0x0000000000000000       0x54 HAL/RPLIDAR/RPLIDAR_program.o
+ .debug_frame   0x0000000000000000       0xe8 HAL/RPLIDAR/RPLIDAR_program.o
+ .ARM.attributes
+                0x0000000000000000       0x2d HAL/RPLIDAR/RPLIDAR_program.o
  .group         0x0000000000000000        0xc MCAL/MADC/MADC_prog.o
  .group         0x0000000000000000        0xc MCAL/MADC/MADC_prog.o
  .group         0x0000000000000000        0xc MCAL/MADC/MADC_prog.o
@@ -329,7 +443,7 @@ Discarded input sections
  .text.MUSART_enBusySendString
                 0x0000000000000000       0x5c MCAL/MUSART/MUSART_prog.o
  .text.MUSART_enBusyReceiveByte
-                0x0000000000000000       0x60 MCAL/MUSART/MUSART_prog.o
+                0x0000000000000000       0x48 MCAL/MUSART/MUSART_prog.o
  .text.MUSART_enEnableInt
                 0x0000000000000000       0x84 MCAL/MUSART/MUSART_prog.o
  .text.MUSART_enDisableInt
@@ -381,6 +495,30 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0x20 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memset.o)
  .ARM.attributes
                 0x0000000000000000       0x2d c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memset.o)
+ .text          0x0000000000000000      0x378 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .data          0x0000000000000000        0x0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .bss           0x0000000000000000        0x0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x0000000000000000       0xac c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .ARM.attributes
+                0x0000000000000000       0x1d c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .text          0x0000000000000000      0x424 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivdf3.o)
+ .data          0x0000000000000000        0x0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivdf3.o)
+ .bss           0x0000000000000000        0x0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivdf3.o)
+ .debug_frame   0x0000000000000000       0x50 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivdf3.o)
+ .ARM.attributes
+                0x0000000000000000       0x1d c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivdf3.o)
+ .text          0x0000000000000000       0xa0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .data          0x0000000000000000        0x0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .bss           0x0000000000000000        0x0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .debug_frame   0x0000000000000000       0x24 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .ARM.attributes
+                0x0000000000000000       0x1d c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .text          0x0000000000000000       0xec c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
+ .data          0x0000000000000000        0x0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
+ .bss           0x0000000000000000        0x0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
+ .debug_frame   0x0000000000000000       0xc8 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
+ .ARM.attributes
+                0x0000000000000000       0x1d c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a(_arm_cmpsf2.o)
  .text          0x0000000000000000        0x0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(_exit.o)
  .data          0x0000000000000000        0x0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(_exit.o)
  .bss           0x0000000000000000        0x0 c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(_exit.o)
@@ -415,6 +553,9 @@ LOAD HAL/HIR/HIR_prog.o
 LOAD HAL/HLCD/HLCD_prog.o
 LOAD HAL/HLM35 TEMP/HLM35_prog.o
 LOAD HAL/HRAIN SENSOR/HRAIN_prog.o
+LOAD HAL/IR/IR_program.o
+LOAD HAL/PIR/PIR_interface.o
+LOAD HAL/RPLIDAR/RPLIDAR_program.o
 LOAD MCAL/MADC/MADC_prog.o
 LOAD MCAL/MAFIO/MAFIO_prog.o
 LOAD MCAL/MEXTI/MEXTI_prog.o
@@ -940,7 +1081,7 @@ LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_macro   0x0000000000001702       0x88 MCAL/MUSART/MUSART_prog.o
  .debug_macro   0x000000000000178a       0x1b Src/main.o
 
-.debug_line     0x0000000000000000     0x248f
+.debug_line     0x0000000000000000     0x2488
  .debug_line    0x0000000000000000      0x4c2 APP/APP_prog.o
  .debug_line    0x00000000000004c2      0x36b HAL/HLCD/HLCD_prog.o
  .debug_line    0x000000000000082d      0x1e2 HAL/HLM35 TEMP/HLM35_prog.o
@@ -950,11 +1091,11 @@ LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_line    0x00000000000014b7      0x5e1 MCAL/MGPIO/MGPIO_prog.o
  .debug_line    0x0000000000001a98      0x18b MCAL/MRCC/MRCC_prog.o
  .debug_line    0x0000000000001c23      0x2f2 MCAL/MSYSTICK/MSYSTICK_prog.o
- .debug_line    0x0000000000001f15      0x469 MCAL/MUSART/MUSART_prog.o
- .debug_line    0x000000000000237e       0x8d Src/main.o
- .debug_line    0x000000000000240b       0x84 Startup/startup_stm32f103c8tx.o
+ .debug_line    0x0000000000001f15      0x462 MCAL/MUSART/MUSART_prog.o
+ .debug_line    0x0000000000002377       0x8d Src/main.o
+ .debug_line    0x0000000000002404       0x84 Startup/startup_stm32f103c8tx.o
 
-.debug_str      0x0000000000000000     0x60ca
+.debug_str      0x0000000000000000     0x60cc
  .debug_str     0x0000000000000000     0x3dbd APP/APP_prog.o
                                        0x3e41 (size before relaxing)
  .debug_str     0x0000000000003dbd      0x3b8 HAL/HLCD/HLCD_prog.o
@@ -973,11 +1114,11 @@ LOAD c:/st/stm32cubeide_1.6.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                                        0x3d5d (size before relaxing)
  .debug_str     0x0000000000005922      0x290 MCAL/MSYSTICK/MSYSTICK_prog.o
                                        0x3857 (size before relaxing)
- .debug_str     0x0000000000005bb2      0x4d4 MCAL/MUSART/MUSART_prog.o
-                                       0x3a8f (size before relaxing)
- .debug_str     0x0000000000006086       0x13 Src/main.o
+ .debug_str     0x0000000000005bb2      0x4d6 MCAL/MUSART/MUSART_prog.o
+                                       0x3a91 (size before relaxing)
+ .debug_str     0x0000000000006088       0x13 Src/main.o
                                        0x2d84 (size before relaxing)
- .debug_str     0x0000000000006099       0x31 Startup/startup_stm32f103c8tx.o
+ .debug_str     0x000000000000609b       0x31 Startup/startup_stm32f103c8tx.o
                                          0x70 (size before relaxing)
 
 .comment        0x0000000000000000       0x53

@@ -19,6 +19,9 @@ RM := rm -rf
 -include MCAL/MEXTI/subdir.mk
 -include MCAL/MAFIO/subdir.mk
 -include MCAL/MADC/subdir.mk
+-include HAL/RPLIDAR/subdir.mk
+-include HAL/PIR/subdir.mk
+-include HAL/IR/subdir.mk
 -include HAL/HRAIN\ SENSOR/subdir.mk
 -include HAL/HLM35\ TEMP/subdir.mk
 -include HAL/HLCD/subdir.mk

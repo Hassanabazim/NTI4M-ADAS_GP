@@ -28,10 +28,6 @@ ErrorState_t LM35_u8TemperatureInit(MADC_GROUP_t *Copy_pStructLM35)
 	{
 		/*GPIO for LM35 */
 		MGPIO_enSetPinDirection(HLM35_PORT, HLM35_PIN, IN_ANALOG);
-
-//		Copy_pStructLM35->channel = MADC_channel0;
-//		Copy_pStructLM35->Index = MADC_INDEX_0;
-//		Copy_pStructLM35->Sample = MADC_SAMPLE_13_5CYCLE;
 		MADC_enRegGroupChannel_Init(Copy_pStructLM35);
 	}
 	else

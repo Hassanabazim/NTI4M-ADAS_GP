@@ -1,0 +1,15 @@
+../MCAL/GPTIM/TIMERx_program.c:19:6:MTIMERx_voidInit	1
+../MCAL/GPTIM/TIMERx_program.c:51:6:MTIMERx_voidUpdatePSC	1
+../MCAL/GPTIM/TIMERx_program.c:59:6:MTIMERx_voidPWMSetup	5
+../MCAL/GPTIM/TIMERx_program.c:104:6:MTIMERx_voidSetPWMDuty	5
+../MCAL/GPTIM/TIMERx_program.c:118:6:MTIMERx_voidStopTimer	5
+../MCAL/GPTIM/TIMERx_program.c:131:6:MTIMERx_voidStartTimer	5
+../MCAL/GPTIM/TIMERx_program.c:143:6:MTIMERx_voidInputCaptureSetup	5
+../MCAL/GPTIM/TIMERx_program.c:191:6:MTIMERx_voidGetInputCaptureCounter	5
+../MCAL/GPTIM/TIMERx_program.c:206:6:MTIMERx_voidSetInputCaptureTrigger	5
+../MCAL/GPTIM/TIMERx_program.c:232:18:MTIMERx_GetTimerID	5
+../MCAL/GPTIM/TIMERx_program.c:249:6:MTIMERx_voidInputCaptureCallback	3
+../MCAL/GPTIM/TIMERx_program.c:260:6:TIM2_IRQHandler	9
+../MCAL/GPTIM/TIMERx_program.c:308:6:TIM3_PWM_Init	1
+../MCAL/GPTIM/TIMERx_program.c:320:6:TIM3_PWM_CH1_Generate	1
+../MCAL/GPTIM/TIMERx_program.c:335:6:TIM3_PWM_CH2_Generate	1

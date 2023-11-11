@@ -1,0 +1,3 @@
+../HAL/DC MOTOR/HDCMOTOR_prog.c:6:14:HDCMotor_u8RotatCW	24	static
+../HAL/DC MOTOR/HDCMOTOR_prog.c:34:14:HDCMOTOR_u8RotatCCW	24	static
+../HAL/DC MOTOR/HDCMOTOR_prog.c:62:14:HDCMOTOR_u8Stop	24	static

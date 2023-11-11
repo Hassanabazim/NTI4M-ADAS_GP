@@ -1,7 +1,8 @@
 
 #include "MGPIO_int.h"
-#include "IR_interface.h"
-#include "IR_config.h"
+
+#include "../HIR/IR_config.h"
+#include "../HIR/IR_interface.h"
 
 void IR_voidInit(void)
 {

@@ -1,6 +1,6 @@
 
-#ifndef PIR_PIR_CONFIG_H_
-#define PIR_PIR_CONFIG_H_
+#ifndef HPIR_PIR_CONFIG_H_
+#define HPIR_PIR_CONFIG_H_
 
 #define PIR_PORT_NUM   PORTA
 #define PIR_PIN_NUM    PIN1
@@ -8,4 +8,4 @@
 
 
 
-#endif /* PIR_PIR_CONFIG_H_ */
+#endif /* HPIR_PIR_CONFIG_H_ */

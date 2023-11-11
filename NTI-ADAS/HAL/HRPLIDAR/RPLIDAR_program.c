@@ -4,9 +4,10 @@
 #include "MRCC_int.h"
 #include "MSYSTICK_int.h"
 #include "MUSART_int.h"
-#include "RPLIDAR_interface.h"
-#include "RPLIDAR_config.h"
-#include "RPLIDAR_private.h"
+
+#include "../HRPLIDAR/RPLIDAR_config.h"
+#include "../HRPLIDAR/RPLIDAR_interface.h"
+#include "../HRPLIDAR/RPLIDAR_private.h"
 
 
          /*      Initialization Parameters     */

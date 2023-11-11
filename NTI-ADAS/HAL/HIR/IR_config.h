@@ -1,6 +1,6 @@
 
-#ifndef IR_IR_CONFIG_H_
-#define IR_IR_CONFIG_H_
+#ifndef HIR_IR_CONFIG_H_
+#define HIR_IR_CONFIG_H_
 
 /*CONFIGURATION for IR1*/
 #define IR1_PORT_NUM  PORTA
@@ -13,4 +13,4 @@
 #define IR2_PIN_MODE  IN_PULL_UP_PULL_DOWN
 
 
-#endif /* IR_IR_CONFIG_H_ */
+#endif /* HIR_IR_CONFIG_H_ */

@@ -1,8 +1,10 @@
 
+#include "../HPIR/PIR_interface.h"
+
 #include "MGPIO_int.h"
-#include "PIR_interface.h"
-#include "PIR_config.h"
-#include "PIR_private.h"
+
+#include "../HPIR/PIR_config.h"
+#include "../HPIR/PIR_private.h"
 
 void PIR_voidInit()
 {

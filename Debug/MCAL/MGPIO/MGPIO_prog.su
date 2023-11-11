@@ -1,8 +1,0 @@
-../MCAL/MGPIO/MGPIO_prog.c:43:14:MGPIO_enSetPinDirection	24	static
-../MCAL/MGPIO/MGPIO_prog.c:132:14:MGPIO_enSetPinValue	24	static
-../MCAL/MGPIO/MGPIO_prog.c:207:14:MGPIO_enTogglePin	24	static
-../MCAL/MGPIO/MGPIO_prog.c:249:14:MGPIO_enGetPinValue	24	static
-../MCAL/MGPIO/MGPIO_prog.c:293:14:MGPIO_enSetPortDirection	24	static
-../MCAL/MGPIO/MGPIO_prog.c:374:14:MGPIO_enSetPortValue	24	static
-../MCAL/MGPIO/MGPIO_prog.c:487:14:MGPIO_enSetResetPin	24	static
-../MCAL/MGPIO/MGPIO_prog.c:566:14:MGPIO_enLockPin	24	static

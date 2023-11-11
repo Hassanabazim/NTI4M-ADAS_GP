@@ -1,0 +1,3 @@
+IR_program.c:6:6:IR_voidInit	8	static
+IR_program.c:12:15:IR_IR_PinValueReadLeft	16	static
+IR_program.c:34:15:IR_IR_PinValueReadRight	16	static

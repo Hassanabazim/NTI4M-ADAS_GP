@@ -1,0 +1,10 @@
+lcd.c:62:13:enablePulse	8	static
+lcd.c:84:6:lcd_vidInit	8	static
+lcd.c:119:6:lcd_vidSendCmd	16	static
+lcd.c:149:6:lcd_vidSendData	16	static
+lcd.c:180:6:lcd_vidGotoRowColumn	16	static
+lcd.c:214:6:lcd_vidDisplyChar	16	static
+lcd.c:228:6:lcd_vidDisplyStr	16	static
+lcd.c:246:6:lcd_vidCustomWrite	16	static
+lcd.c:261:6:lcd_vidDisplayNum	32	static
+lcd.c:301:6:lcd_vidClrDislay	8	static

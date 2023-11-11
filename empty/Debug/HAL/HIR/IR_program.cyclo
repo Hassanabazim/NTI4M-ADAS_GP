@@ -1,0 +1,3 @@
+../HAL/HIR/IR_program.c:7:6:IR_voidInit	1
+../HAL/HIR/IR_program.c:13:15:IR_IR_PinValueReadLeft	4
+../HAL/HIR/IR_program.c:35:15:IR_IR_PinValueReadRight	4

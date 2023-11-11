@@ -1,0 +1,2 @@
+../HAL/HPIR/PIR_interface.c:10:6:PIR_voidInit	1
+../HAL/HPIR/PIR_interface.c:15:4:PIR_u8GetPinVal	2

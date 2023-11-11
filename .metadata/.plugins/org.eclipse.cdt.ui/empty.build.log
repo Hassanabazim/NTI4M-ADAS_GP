@@ -1,0 +1,28 @@
+13:49:47 **** Clean-only build of configuration Debug for project empty ****
+make -j12 clean 
+rm -rf ./Startup/startup_stm32f103c8tx.d ./Startup/startup_stm32f103c8tx.o
+rm -rf ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf ./MCAL/MUSART/MUSART_prog.cyclo ./MCAL/MUSART/MUSART_prog.d ./MCAL/MUSART/MUSART_prog.o ./MCAL/MUSART/MUSART_prog.su
+rm -rf ./MCAL/MTIM1/MTIM1_prog.cyclo ./MCAL/MTIM1/MTIM1_prog.d ./MCAL/MTIM1/MTIM1_prog.o ./MCAL/MTIM1/MTIM1_prog.su
+rm -rf ./MCAL/MSYSTICK/MSYSTICK_prog.cyclo ./MCAL/MSYSTICK/MSYSTICK_prog.d ./MCAL/MSYSTICK/MSYSTICK_prog.o ./MCAL/MSYSTICK/MSYSTICK_prog.su
+rm -rf ./MCAL/MRCC/MRCC_prog.cyclo ./MCAL/MRCC/MRCC_prog.d ./MCAL/MRCC/MRCC_prog.o ./MCAL/MRCC/MRCC_prog.su
+rm -rf ./MCAL/MNVIC/MNVIC_prog.cyclo ./MCAL/MNVIC/MNVIC_prog.d ./MCAL/MNVIC/MNVIC_prog.o ./MCAL/MNVIC/MNVIC_prog.su
+rm -rf ./MCAL/MGPIO/MGPIO_prog.cyclo ./MCAL/MGPIO/MGPIO_prog.d ./MCAL/MGPIO/MGPIO_prog.o ./MCAL/MGPIO/MGPIO_prog.su
+rm -rf ./MCAL/MEXTI/MEXTI_prog.cyclo ./MCAL/MEXTI/MEXTI_prog.d ./MCAL/MEXTI/MEXTI_prog.o ./MCAL/MEXTI/MEXTI_prog.su
+rm -rf ./MCAL/MAFIO/MAFIO_prog.cyclo ./MCAL/MAFIO/MAFIO_prog.d ./MCAL/MAFIO/MAFIO_prog.o ./MCAL/MAFIO/MAFIO_prog.su
+rm -rf ./MCAL/MADC/MADC_prog.cyclo ./MCAL/MADC/MADC_prog.d ./MCAL/MADC/MADC_prog.o ./MCAL/MADC/MADC_prog.su
+rm -rf ./MCAL/GPTIM/TIMERx_program.cyclo ./MCAL/GPTIM/TIMERx_program.d ./MCAL/GPTIM/TIMERx_program.o ./MCAL/GPTIM/TIMERx_program.su
+rm -rf ./HAL/HULTRASONIC/HULTRASONIC_prog.cyclo ./HAL/HULTRASONIC/HULTRASONIC_prog.d ./HAL/HULTRASONIC/HULTRASONIC_prog.o ./HAL/HULTRASONIC/HULTRASONIC_prog.su
+rm -rf ./HAL/HRPLIDAR/RPLIDAR_program.cyclo ./HAL/HRPLIDAR/RPLIDAR_program.d ./HAL/HRPLIDAR/RPLIDAR_program.o ./HAL/HRPLIDAR/RPLIDAR_program.su
+rm -rf ./HAL/HRAIN\ SENSOR/HRAIN_prog.cyclo ./HAL/HRAIN\ SENSOR/HRAIN_prog.d ./HAL/HRAIN\ SENSOR/HRAIN_prog.o ./HAL/HRAIN\ SENSOR/HRAIN_prog.su
+rm -rf ./HAL/HPIR/PIR_interface.cyclo ./HAL/HPIR/PIR_interface.d ./HAL/HPIR/PIR_interface.o ./HAL/HPIR/PIR_interface.su
+rm -rf ./HAL/HLM35\ TEMP/HLM35_prog.cyclo ./HAL/HLM35\ TEMP/HLM35_prog.d ./HAL/HLM35\ TEMP/HLM35_prog.o ./HAL/HLM35\ TEMP/HLM35_prog.su
+rm -rf ./HAL/HLCD/HLCD_prog.cyclo ./HAL/HLCD/HLCD_prog.d ./HAL/HLCD/HLCD_prog.o ./HAL/HLCD/HLCD_prog.su
+rm -rf ./HAL/HIR/IR_program.cyclo ./HAL/HIR/IR_program.d ./HAL/HIR/IR_program.o ./HAL/HIR/IR_program.su
+rm -rf ./HAL/DC\ MOTOR/HDCMOTOR_prog.cyclo ./HAL/DC\ MOTOR/HDCMOTOR_prog.d ./HAL/DC\ MOTOR/HDCMOTOR_prog.o ./HAL/DC\ MOTOR/HDCMOTOR_prog.su
+rm -rf ./APP/APP_prog.cyclo ./APP/APP_prog.d ./APP/APP_prog.o ./APP/APP_prog.su
+rm -rf default.size.stdout empty.elf empty.hex empty.list empty.map
+ 
+
+13:49:47 Build Finished. 0 errors, 0 warnings. (took 251ms)
+

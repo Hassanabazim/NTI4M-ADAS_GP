@@ -1,0 +1,9 @@
+../MCAL/MADC/MADC_prog.c:41:14:MADC_enInit	11
+../MCAL/MADC/MADC_prog.c:144:14:MADC_enRegGroupChannel_Init	9
+../MCAL/MADC/MADC_prog.c:199:14:MADC_enInjGroupChannel_Init	6
+../MCAL/MADC/MADC_prog.c:236:14:MADC_enRegChannel_Conv	3
+../MCAL/MADC/MADC_prog.c:267:14:MADC_enInjChannel_Conv	4
+../MCAL/MADC/MADC_prog.c:301:14:MADC_enEnableInt	3
+../MCAL/MADC/MADC_prog.c:317:14:MADC_enDisableInt	3
+../MCAL/MADC/MADC_prog.c:333:14:MADC_enIntCallBack	2
+../MCAL/MADC/MADC_prog.c:353:6:ADC1_2_IRQHandler	2

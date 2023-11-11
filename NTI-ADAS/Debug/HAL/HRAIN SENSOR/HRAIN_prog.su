@@ -1,2 +1,0 @@
-HRAIN_prog.c:23:14:RainSensor_u8Init	24	static
-HRAIN_prog.c:47:14:RainSensor_u8GetWaterLevel	24	static

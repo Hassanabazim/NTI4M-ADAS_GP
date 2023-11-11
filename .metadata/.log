@@ -819,3 +819,24 @@ org.eclipse.core.runtime.CoreException: attempt to set description for a project
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 !SUBENTRY 1 org.eclipse.cdt.core 4 -1 2023-11-11 13:53:29.618
 !MESSAGE attempt to set description for a project which does not exist or not open
+!SESSION 2023-11-11 13:58:00.282 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-11-11 13:58:27.513
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-11-11 13:58:27.514
+!MESSAGE Log4j2 initialized with config file E:\Final Project\NTI4M-ADAS_GP\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-11 13:58:32.639
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-11-11 14:03:01.338
+!MESSAGE Indexed 'NTI-ADAS' (3 sources, 53 headers) in 0.529 sec: 1,950 declarations; 2,831 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-11-11 14:06:15.089
+!MESSAGE Indexed 'NTI-ADAS' (20 sources, 57 headers) in 0.654 sec: 1,079 declarations; 4,454 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)

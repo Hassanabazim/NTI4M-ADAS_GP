@@ -1,8 +1,8 @@
 /*
  * TIMERx_interface.h
  *
- *  Created on: Nov 3, 2023
- *      Author: Mario Ezzat
+ *  Created on: Nov 11, 2023
+ *      Author: Ziad Hamdy
  */
 
 #ifndef MCAL_TIMERX_TIMERX_INTERFACE_H_

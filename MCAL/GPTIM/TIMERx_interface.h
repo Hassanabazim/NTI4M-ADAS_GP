@@ -48,4 +48,22 @@ void MTIMERx_voidSetInputCaptureTrigger(u8 copy_u8TimerID, u8 copy_u8ChannelID, 
 void MTIMERx_voidInputCaptureCallback(u8 copy_u8TimerID, u8 copy_u8ChannelID, timer_callback_t ptr);
 
 
+
+
+
+
+
+
+/* My work*/
+
+
+
+void TIM3_PWM_Init(void);
+void TIM3_PWM_CH1_Generate(u8 copy_u8Duty);
+void TIM3_PWM_CH2_Generate(u8 copy_u8Duty);
+void TIM3_PWM_CH1_Change_Duty(u16 copy_u16DutyPercentege);
+void TIM3_PWM_CH2_Change_Duty(u16 copy_u16DutyPercentege);
+
+
+
 #endif /* MCAL_TIMERX_TIMERX_INTERFACE_H_ */

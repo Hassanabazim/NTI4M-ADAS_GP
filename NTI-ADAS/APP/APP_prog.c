@@ -25,6 +25,7 @@
 #include "HLCD_int.h"
 #include "HRAIN_int.h"
 #include "HLM35_int.h"
+#include "TIMERx_interface.h"
 #include "APP_int.h"
 #include "APP_config.h"
 #include "APP_priv.h"
@@ -146,6 +147,15 @@ void App_voidstartApp(void)
 #elif(APPLICATION == ADAPTIVE_CURISE_CONTROL)
 	/**********************************************************************************************************************/
 
+	MRCC_enSysClkINIT();
+	MRCC_enEnablePeripheralCLK(MRCC_IOPA);
+	MRCC_enEnablePeripheralCLK(MRCC_TIM3);
+	MGPIO_enSetPinDirection(PORTA, PIN2, OUT_2MHZ_PUSH_PULL);
+	MGPIO_enSetPinDirection(PORTA, PIN3, OUT_2MHZ_PUSH_PULL);
+	MGPIO_enSetPinDirection(PORTA, PIN6, OUT_2MHZ_AF_PUSH_PULL);
+	MGPIO_enSetPinDirection(PORTA, PIN7, OUT_2MHZ_AF_PUSH_PULL);
+	TIM3_PWM_Init();
+	TIM3_PWM_CH1_Generate(60);
 
 	while (1)
 	{

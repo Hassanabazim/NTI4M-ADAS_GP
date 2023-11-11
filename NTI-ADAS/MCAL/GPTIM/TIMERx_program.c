@@ -1,8 +1,8 @@
 /*
  * TIMERx_program.c
  *
- *  Created on: Nov 3, 2023
- *      Author: Mario Ezzat
+ *  Created on: Nov 11, 2023
+ *      Author: Ziad Hamdy
  */
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"

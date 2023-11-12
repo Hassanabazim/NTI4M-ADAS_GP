@@ -3,90 +3,75 @@
 #include "MGPIO_int.h"
 #include "HDCMOTOR_cfg.h"
 
-ErrorState_t HDCMotor_u8RotatCW(MGPIO_PORT_t copy_u8PortNumber,MGPIO_PIN_t copy_u8CWPin,MGPIO_PIN_t copy_u8CCWPin )
+
+
+
+
+void HDCMOTOR_voidInit(void)
 {
-	ErrorState_t Local_ErrType=SUCCESS;
+	MGPIO_enSetPinDirection(HDC_MOTOR_FORWARD_BACKWARD_PORT, FORWARD_PIN    , OUT_2MHZ_PUSH_PULL);
+	MGPIO_enSetPinDirection(HDC_MOTOR_FORWARD_BACKWARD_PORT, BACKWARD_PIN   , OUT_2MHZ_PUSH_PULL);
+	MGPIO_enSetPinDirection(HDC_MOTOR_DIRICTIONAL_PORT, TURN_LEFT_PIN  , OUT_2MHZ_PUSH_PULL);
+	MGPIO_enSetPinDirection(HDC_MOTOR_DIRICTIONAL_PORT, TURN_RIGHT_PIN , OUT_2MHZ_PUSH_PULL);
 
-	if ((copy_u8CWPin>=PIN0)&&(copy_u8CWPin<=PIN15)&&(copy_u8CCWPin>=PIN0)&&(copy_u8CCWPin<=PIN15))
-	{
-		switch(copy_u8PortNumber)
-		{
-		case PORTA :
-			MGPIO_enSetPinValue(PORTA,copy_u8CCWPin,LOW);
-			MGPIO_enSetPinValue(PORTA,copy_u8CWPin,HIGH);break;
-		case PORTB :
-			MGPIO_enSetPinValue(PORTB,copy_u8CCWPin,LOW);
-			MGPIO_enSetPinValue(PORTB,copy_u8CWPin,HIGH);break;
-		case PORTC :
-			MGPIO_enSetPinValue(PORTC,copy_u8CCWPin,LOW);
-			MGPIO_enSetPinValue(PORTC,copy_u8CWPin,HIGH);break;
-
-		default:Local_ErrType=OUT_OF_RANG_ERR; break;
-
-		}
-	}
-	else
-	{
-		Local_ErrType=OUT_OF_RANG_ERR;
-	}
-	return Local_ErrType;
 }
-ErrorState_t HDCMOTOR_u8RotatCCW(MGPIO_PORT_t copy_PortNum,MGPIO_PIN_t copy_u8CWPin,MGPIO_PIN_t copy_u8CCWPin)
+/**********************************************************************************************/
+
+void HDCMOTOR_voidForward(void)
 {
-	ErrorState_t Local_ErrType = SUCCESS;
-
-	if ((copy_u8CWPin>=PIN0)&&(copy_u8CWPin<=PIN15)&&(copy_u8CCWPin>=PIN0)&&(copy_u8CCWPin<=PIN15))
-	{
-		switch(copy_PortNum)
-		{
-		case PORTA :
-			MGPIO_enSetPinValue(PORTA,copy_u8CWPin,LOW);
-			MGPIO_enSetPinValue(PORTA,copy_u8CCWPin,HIGH);break;
-		case PORTB :
-			MGPIO_enSetPinValue(PORTB,copy_u8CWPin,LOW);
-			MGPIO_enSetPinValue(PORTB,copy_u8CCWPin,HIGH);break;
-		case PORTC :
-			MGPIO_enSetPinValue(PORTC,copy_u8CWPin,LOW);
-			MGPIO_enSetPinValue(PORTC,copy_u8CCWPin,HIGH);break;
-
-		default:Local_ErrType=OUT_OF_RANG_ERR; break;
-
-		}
-	}
-	else
-	{
-		Local_ErrType = OUT_OF_RANG_ERR;
-	}
-	return Local_ErrType;
+	MGPIO_enSetPinValue(HDC_MOTOR_FORWARD_BACKWARD_PORT,BACKWARD_PIN,LOW);
+	MGPIO_enSetPinValue(HDC_MOTOR_FORWARD_BACKWARD_PORT,FORWARD_PIN,HIGH);
 }
-ErrorState_t HDCMOTOR_u8Stop(MGPIO_PORT_t copy_PortNum,MGPIO_PIN_t copy_u8CWPin,MGPIO_PIN_t copy_u8CCWPin)
+/**********************************************************************************************/
+
+/*backward function */
+
+/**********************************************************************************************/
+
+void HDCMOTOR_voidBackward(void)
 {
-	ErrorState_t Local_ErrType = SUCCESS;
-
-	if ((copy_u8CWPin >= PIN0) && (copy_u8CWPin <= PIN15)&&(copy_u8CCWPin >= PIN0) && (copy_u8CCWPin<=PIN15))
-	{
-		switch(copy_PortNum)
-		{
-		case PORTA :
-			MGPIO_enSetPinValue(PORTA,copy_u8CWPin,LOW);
-			MGPIO_enSetPinValue(PORTA,copy_u8CCWPin,LOW);break;
-		case PORTB :
-			MGPIO_enSetPinValue(PORTB,copy_u8CWPin,LOW);
-			MGPIO_enSetPinValue(PORTB,copy_u8CCWPin,LOW);break;
-		case PORTC :
-			MGPIO_enSetPinValue(PORTC,copy_u8CWPin,LOW);
-			MGPIO_enSetPinValue(PORTC,copy_u8CCWPin,LOW);break;
-
-		default:Local_ErrType = OUT_OF_RANG_ERR ; break;
-
-		}
-	}
-	else
-	{
-		Local_ErrType= OUT_OF_RANG_ERR;
-	}
-	return Local_ErrType;
+	MGPIO_enSetPinValue(HDC_MOTOR_FORWARD_BACKWARD_PORT,FORWARD_PIN,LOW);
+	MGPIO_enSetPinValue(HDC_MOTOR_FORWARD_BACKWARD_PORT,BACKWARD_PIN,HIGH);
 }
+/**********************************************************************************************/
+
+/*turn right an left functions*/
+
+/**********************************************************************************************/
+
+void HDCMOTOR_voidTurnRight(void)
+{
+	MGPIO_enSetPinValue(HDC_MOTOR_DIRICTIONAL_PORT,TURN_LEFT_PIN,LOW);
+	MGPIO_enSetPinValue(HDC_MOTOR_DIRICTIONAL_PORT,TURN_RIGHT_PIN,HIGH);
+}
+
+/**********************************************************************************************/
+void HDCMOTOR_voidTurnLeft(void)
+{
+	MGPIO_enSetPinValue(HDC_MOTOR_DIRICTIONAL_PORT,TURN_RIGHT_PIN,LOW);
+	MGPIO_enSetPinValue(HDC_MOTOR_DIRICTIONAL_PORT,TURN_LEFT_PIN,HIGH);
+}
+/**********************************************************************************************/
+
+
+
+/* Stop functions */
+/**********************************************************************************************/
+
+void HDCMOTOR_voidDiretionalStop(void)
+{
+	MGPIO_enSetPinValue(HDC_MOTOR_DIRICTIONAL_PORT ,TURN_RIGHT_PIN ,LOW);
+	MGPIO_enSetPinValue(HDC_MOTOR_DIRICTIONAL_PORT ,TURN_LEFT_PIN, LOW);
+}
+/**********************************************************************************************/
+
+void HDCMOTOR_voidForwardBackwardStop(void)
+{
+	MGPIO_enSetPinValue(HDC_MOTOR_FORWARD_BACKWARD_PORT ,BACKWARD_PIN ,LOW);
+	MGPIO_enSetPinValue(HDC_MOTOR_FORWARD_BACKWARD_PORT ,FORWARD_PIN, LOW);
+}
+/**********************************************************************************************/
+
 
 
 

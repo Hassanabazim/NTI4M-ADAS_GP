@@ -1,16 +1,17 @@
 #ifndef _HDC_MOTOR_
 #define _HDC_MOTOR_
 
-
+/*DC Motor port	*/
+#define HDC_MOTOR_DIRICTIONAL_PORT				PORTA
+#define HDC_MOTOR_FORWARD_BACKWARD_PORT			PORTA
 
 /*Directional Motor pins */
-#define Diriction_Motor_CW			PIN4
-#define Diriction_Motor_ANTI_CW		PIN5
+#define TURN_RIGHT_PIN			PIN4
+#define TURN_LEFT_PIN 			PIN5
 
 
 /* Forward and back motor Pins*/
-#define DC1_M_F			PIN2
-
-#define DC1_M_B 		PIN3
+#define FORWARD_PIN			PIN2
+#define BACKWARD_PIN 		PIN3
 
 #endif

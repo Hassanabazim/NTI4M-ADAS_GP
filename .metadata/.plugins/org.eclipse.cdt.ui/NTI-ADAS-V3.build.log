@@ -1,0 +1,23 @@
+14:07:41 **** Incremental Build of configuration Debug for project NTI-ADAS-V3 ****
+make -j12 all 
+arm-none-eabi-gcc "../APP/APP_prog.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/APP" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/HAL/DC MOTOR" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/HAL/HIR" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/HAL/HLCD" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/HAL/HLM35 TEMP" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/HAL/HPIR" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/HAL/HRAIN SENSOR" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/HAL/HRPLIDAR" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/HAL/HULTRASONIC" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/LIB" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/MCAL/GPTIM" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/MCAL/MADC" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/MCAL/MAFIO" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/MCAL/MEXTI" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/MCAL/MGPIO" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/MCAL/MNVIC" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/MCAL/MRCC" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/MCAL/MSYSTICK" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/MCAL/MTIM1" -I"C:/Users/ziads/Desktop/NTI-ADAS-V3/NTI-ADAS-V3/MCAL/MUSART" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"APP/APP_prog.d" -MT"APP/APP_prog.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "APP/APP_prog.o"
+arm-none-eabi-gcc -o "NTI-ADAS-V3.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ziads\Desktop\NTI-ADAS-V3\NTI-ADAS-V3\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NTI-ADAS-V3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NTI-ADAS-V3.elf
+ 
+arm-none-eabi-size   NTI-ADAS-V3.elf 
+arm-none-eabi-objdump -h -S  NTI-ADAS-V3.elf  > "NTI-ADAS-V3.list"
+arm-none-eabi-objcopy  -O ihex  NTI-ADAS-V3.elf  "NTI-ADAS-V3.hex"
+arm-none-eabi-objcopy  -O binary  NTI-ADAS-V3.elf  "NTI-ADAS-V3.bin"
+   text	   data	    bss	    dec	    hex	filename
+   5728	     20	   1772	   7520	   1d60	NTI-ADAS-V3.elf
+Finished building: default.size.stdout
+ 
+Finished building: NTI-ADAS-V3.hex
+Finished building: NTI-ADAS-V3.bin
+ 
+Finished building: NTI-ADAS-V3.list
+ 
+ 
+
+14:07:42 Build Finished. 0 errors, 0 warnings. (took 630ms)
+

@@ -12,4 +12,4 @@
 ../MCAL/GPTIM/TIMERx_program.c:260:6:TIM2_IRQHandler	9
 ../MCAL/GPTIM/TIMERx_program.c:308:6:TIM3_PWM_Init	1
 ../MCAL/GPTIM/TIMERx_program.c:320:6:TIM3_PWM_CH1_Generate	1
-../MCAL/GPTIM/TIMERx_program.c:335:6:TIM3_PWM_CH2_Generate	1
+../MCAL/GPTIM/TIMERx_program.c:337:6:TIM3_PWM_CH2_Generate	1

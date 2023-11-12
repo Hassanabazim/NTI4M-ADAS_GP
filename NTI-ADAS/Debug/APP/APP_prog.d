@@ -13,6 +13,8 @@ APP/APP_prog.o: ../APP/APP_prog.c \
  E:/Final\ Project/NTI4M-ADAS_GP/NTI-ADAS/HAL/HRAIN\ SENSOR/HRAIN_int.h \
  E:/Final\ Project/NTI4M-ADAS_GP/NTI-ADAS/HAL/HLM35\ TEMP/HLM35_int.h \
  E:/Final\ Project/NTI4M-ADAS_GP/NTI-ADAS/MCAL/GPTIM/TIMERx_interface.h \
+ E:/Final\ Project/NTI4M-ADAS_GP/NTI-ADAS/HAL/DC\ MOTOR/HDCMOTOR_int.h \
+ E:/Final\ Project/NTI4M-ADAS_GP/NTI-ADAS/HAL/DC\ MOTOR/HDCMOTOR_cfg.h \
  ../APP/APP_int.h ../APP/APP_config.h ../APP/APP_priv.h
 E:/Final\ Project/NTI4M-ADAS_GP/NTI-ADAS/LIB/STD_TYPES.h:
 E:/Final\ Project/NTI4M-ADAS_GP/NTI-ADAS/LIB/ERROR_STATE.h:
@@ -28,6 +30,8 @@ E:/Final\ Project/NTI4M-ADAS_GP/NTI-ADAS/HAL/HLCD/HLCD_int.h:
 E:/Final\ Project/NTI4M-ADAS_GP/NTI-ADAS/HAL/HRAIN\ SENSOR/HRAIN_int.h:
 E:/Final\ Project/NTI4M-ADAS_GP/NTI-ADAS/HAL/HLM35\ TEMP/HLM35_int.h:
 E:/Final\ Project/NTI4M-ADAS_GP/NTI-ADAS/MCAL/GPTIM/TIMERx_interface.h:
+E:/Final\ Project/NTI4M-ADAS_GP/NTI-ADAS/HAL/DC\ MOTOR/HDCMOTOR_int.h:
+E:/Final\ Project/NTI4M-ADAS_GP/NTI-ADAS/HAL/DC\ MOTOR/HDCMOTOR_cfg.h:
 ../APP/APP_int.h:
 ../APP/APP_config.h:
 ../APP/APP_priv.h:

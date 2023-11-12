@@ -26,6 +26,7 @@
 #include "HRAIN_int.h"
 #include "HLM35_int.h"
 #include "TIMERx_interface.h"
+#include "HDCMOTOR_int.h"
 #include "APP_int.h"
 #include "APP_config.h"
 #include "APP_priv.h"
@@ -150,15 +151,42 @@ void App_voidstartApp(void)
 	MRCC_enSysClkINIT();
 	MRCC_enEnablePeripheralCLK(MRCC_IOPA);
 	MRCC_enEnablePeripheralCLK(MRCC_TIM3);
-	MGPIO_enSetPinDirection(PORTA, PIN2, OUT_2MHZ_PUSH_PULL);
-	MGPIO_enSetPinDirection(PORTA, PIN3, OUT_2MHZ_PUSH_PULL);
 	MGPIO_enSetPinDirection(PORTA, PIN6, OUT_2MHZ_AF_PUSH_PULL);
 	MGPIO_enSetPinDirection(PORTA, PIN7, OUT_2MHZ_AF_PUSH_PULL);
 	TIM3_PWM_Init();
-	TIM3_PWM_CH1_Generate(50);
-
+	HDCMOTOR_voidInit();
+	TIM3_PWM_CH1_Generate(70);
+	TIM3_PWM_CH2_Generate(90);
 	while (1)
 	{
+
+
+		//		HDCMOTOR_voidForward();
+		//		HDCMOTOR_voidTurnLeft();
+		//		MSYSTICK_enDelayMS(1000);
+		//		HDCMOTOR_voidForwardBackwardStop();
+		//		HDCMOTOR_voidDiretionalStop();
+		//		MSYSTICK_enDelayMS(1000);
+		//		/**********************/
+		//		HDCMOTOR_voidForwardBackwardStop();
+		//		HDCMOTOR_voidTurnRight();
+		//		MSYSTICK_enDelayMS(1000);
+		//		HDCMOTOR_voidForwardBackwardStop();
+		//		HDCMOTOR_voidDiretionalStop();
+		//		MSYSTICK_enDelayMS(1000);
+		HDCMOTOR_voidBackward();
+		HDCMOTOR_voidTurnRight();
+		MSYSTICK_enDelayMS(2000);
+		HDCMOTOR_voidDiretionalStop();
+		HDCMOTOR_voidForwardBackwardStop();
+		MSYSTICK_enDelayMS(2000);
+		HDCMOTOR_voidForward();
+		HDCMOTOR_voidTurnLeft();
+		MSYSTICK_enDelayMS(2000);
+		HDCMOTOR_voidDiretionalStop();
+		HDCMOTOR_voidForwardBackwardStop();
+		MSYSTICK_enDelayMS(2000);
+
 
 
 	}

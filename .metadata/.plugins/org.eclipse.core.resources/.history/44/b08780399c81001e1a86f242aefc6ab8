@@ -1,0 +1,51 @@
+#include  "STD_TYPES.h"
+#include "ERROR_STATE.h"
+#include "MGPIO_int.h"
+#include "HDCMOTOR_cfg.h"
+
+void HDCMotor_Forward(void)
+{
+			MGPIO_enSetPinValue(HDC_Motor_PORT,BACKWARD_PIN,LOW);
+			MGPIO_enSetPinValue(HDC_Motor_PORT,FORWARD_PIN,HIGH);
+}
+
+
+
+/*backward function */
+void HDCMotor_Backward(void)
+{
+			MGPIO_enSetPinValue(HDC_Motor_PORT,BACKWARD_PIN,HIGH);
+			MGPIO_enSetPinValue(HDC_Motor_PORT,FORWARD_PIN,LOW);
+}
+ErrorState_t HDCMOTOR_u8Stop(MGPIO_PORT_t copy_PortNum,MGPIO_PIN_t copy_u8CWPin,MGPIO_PIN_t copy_u8CCWPin)
+{
+	ErrorState_t Local_ErrType = SUCCESS;
+
+	if ((copy_u8CWPin >= PIN0) && (copy_u8CWPin <= PIN15)&&(copy_u8CCWPin >= PIN0) && (copy_u8CCWPin<=PIN15))
+	{
+		switch(copy_PortNum)
+		{
+		case PORTA :
+			MGPIO_enSetPinValue(PORTA,copy_u8CWPin,LOW);
+			MGPIO_enSetPinValue(PORTA,copy_u8CCWPin,LOW);break;
+		case PORTB :
+			MGPIO_enSetPinValue(PORTB,copy_u8CWPin,LOW);
+			MGPIO_enSetPinValue(PORTB,copy_u8CCWPin,LOW);break;
+		case PORTC :
+			MGPIO_enSetPinValue(PORTC,copy_u8CWPin,LOW);
+			MGPIO_enSetPinValue(PORTC,copy_u8CCWPin,LOW);break;
+
+		default:Local_ErrType = OUT_OF_RANG_ERR ; break;
+
+		}
+	}
+	else
+	{
+		Local_ErrType= OUT_OF_RANG_ERR;
+	}
+	return Local_ErrType;
+}
+
+
+
+

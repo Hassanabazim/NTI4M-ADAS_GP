@@ -1,0 +1,2 @@
+HULTRASONIC_prog.c:13:14:HULTRASONIC_enInit	16	static
+HULTRASONIC_prog.c:27:14:HULTRASONIC_enGetRead	40	static

@@ -12,6 +12,7 @@ RM := rm -rf
 -include Startup/subdir.mk
 -include Src/subdir.mk
 -include MCAL/MUSART/subdir.mk
+-include MCAL/MTIM1/subdir.mk
 -include MCAL/MSYSTICK/subdir.mk
 -include MCAL/MRCC/subdir.mk
 -include MCAL/MNVIC/subdir.mk
@@ -19,13 +20,15 @@ RM := rm -rf
 -include MCAL/MEXTI/subdir.mk
 -include MCAL/MAFIO/subdir.mk
 -include MCAL/MADC/subdir.mk
--include HAL/RPLIDAR/subdir.mk
--include HAL/PIR/subdir.mk
--include HAL/IR/subdir.mk
+-include MCAL/GPTIM/subdir.mk
+-include HAL/HULTRASONIC/subdir.mk
+-include HAL/HRPLIDAR/subdir.mk
 -include HAL/HRAIN\ SENSOR/subdir.mk
+-include HAL/HPIR/subdir.mk
 -include HAL/HLM35\ TEMP/subdir.mk
 -include HAL/HLCD/subdir.mk
 -include HAL/HIR/subdir.mk
+-include HAL/DC\ MOTOR/subdir.mk
 -include APP/subdir.mk
 -include subdir.mk
 -include objects.mk

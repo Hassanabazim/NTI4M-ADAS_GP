@@ -1,0 +1,10 @@
+HLCD_prog.c:63:13:enablePulse	1
+HLCD_prog.c:85:6:lcd_vidInit	1
+HLCD_prog.c:120:6:lcd_vidSendCmd	1
+HLCD_prog.c:150:6:lcd_vidSendData	1
+HLCD_prog.c:181:6:lcd_vidGotoRowColumn	5
+HLCD_prog.c:215:6:lcd_vidDisplyChar	1
+HLCD_prog.c:229:6:lcd_vidDisplyStr	2
+HLCD_prog.c:247:6:lcd_vidCustomWrite	3
+HLCD_prog.c:262:6:lcd_vidDisplayNum	5
+HLCD_prog.c:302:6:lcd_vidClrDislay	1

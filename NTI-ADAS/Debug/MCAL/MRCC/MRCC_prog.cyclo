@@ -1,0 +1,3 @@
+MRCC_prog.c:37:14:MRCC_enSysClkINIT	2
+MRCC_prog.c:167:14:MRCC_enEnablePeripheralCLK	4
+MRCC_prog.c:206:14:MRCC_enDisablePeripheralCLK	4

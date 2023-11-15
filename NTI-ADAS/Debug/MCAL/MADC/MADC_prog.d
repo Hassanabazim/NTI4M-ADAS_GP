@@ -1,24 +1,16 @@
 MCAL/MADC/MADC_prog.o: ../MCAL/MADC/MADC_prog.c \
- D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/LIB/STD_TYPES.h \
- D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/LIB/ERROR_STATE.h \
- D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/LIB/REGISTERS.h \
- D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/LIB/BIT_MATH.h \
- D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/MCAL/MSYSTICK/MSYSTICK_int.h \
+ E:/Mido/Courses/Embedded\ Systems/Embedded\ Systems/NTI\ 4M/Graduation\ Project/project/NTI4M-ADAS_GP/NTI-ADAS/LIB/STD_TYPES.h \
+ E:/Mido/Courses/Embedded\ Systems/Embedded\ Systems/NTI\ 4M/Graduation\ Project/project/NTI4M-ADAS_GP/NTI-ADAS/LIB/ERROR_STATE.h \
+ E:/Mido/Courses/Embedded\ Systems/Embedded\ Systems/NTI\ 4M/Graduation\ Project/project/NTI4M-ADAS_GP/NTI-ADAS/LIB/REGISTERS.h \
+ E:/Mido/Courses/Embedded\ Systems/Embedded\ Systems/NTI\ 4M/Graduation\ Project/project/NTI4M-ADAS_GP/NTI-ADAS/LIB/BIT_MATH.h \
+ E:/Mido/Courses/Embedded\ Systems/Embedded\ Systems/NTI\ 4M/Graduation\ Project/project/NTI4M-ADAS_GP/NTI-ADAS/MCAL/MSYSTICK/MSYSTICK_int.h \
  ../MCAL/MADC/MADC_int.h ../MCAL/MADC/MADC_config.h \
  ../MCAL/MADC/MADC_priv.h
-
-D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/LIB/STD_TYPES.h:
-
-D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/LIB/ERROR_STATE.h:
-
-D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/LIB/REGISTERS.h:
-
-D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/LIB/BIT_MATH.h:
-
-D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/MCAL/MSYSTICK/MSYSTICK_int.h:
-
+E:/Mido/Courses/Embedded\ Systems/Embedded\ Systems/NTI\ 4M/Graduation\ Project/project/NTI4M-ADAS_GP/NTI-ADAS/LIB/STD_TYPES.h:
+E:/Mido/Courses/Embedded\ Systems/Embedded\ Systems/NTI\ 4M/Graduation\ Project/project/NTI4M-ADAS_GP/NTI-ADAS/LIB/ERROR_STATE.h:
+E:/Mido/Courses/Embedded\ Systems/Embedded\ Systems/NTI\ 4M/Graduation\ Project/project/NTI4M-ADAS_GP/NTI-ADAS/LIB/REGISTERS.h:
+E:/Mido/Courses/Embedded\ Systems/Embedded\ Systems/NTI\ 4M/Graduation\ Project/project/NTI4M-ADAS_GP/NTI-ADAS/LIB/BIT_MATH.h:
+E:/Mido/Courses/Embedded\ Systems/Embedded\ Systems/NTI\ 4M/Graduation\ Project/project/NTI4M-ADAS_GP/NTI-ADAS/MCAL/MSYSTICK/MSYSTICK_int.h:
 ../MCAL/MADC/MADC_int.h:
-
 ../MCAL/MADC/MADC_config.h:
-
 ../MCAL/MADC/MADC_priv.h:

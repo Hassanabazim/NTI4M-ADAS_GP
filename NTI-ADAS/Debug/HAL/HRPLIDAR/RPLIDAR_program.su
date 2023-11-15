@@ -1,0 +1,6 @@
+../HAL/HRPLIDAR/RPLIDAR_program.c:22:22:RPLIDAR_Check_error_tGetHealth	32	static
+../HAL/HRPLIDAR/RPLIDAR_program.c:51:22:RPLIDAR_GetDescriptor	32	static
+../HAL/HRPLIDAR/RPLIDAR_program.c:77:15:RPLIDAR_DescriptorCheck	16	static
+../HAL/HRPLIDAR/RPLIDAR_program.c:99:6:RPLIDAR_voidScanResponse	24	static
+../HAL/HRPLIDAR/RPLIDAR_program.c:142:6:RPLIDAR_voidINT	16	static
+../HAL/HRPLIDAR/RPLIDAR_program.c:175:6:func_check	8	static

@@ -1,0 +1,6 @@
+RPLIDAR_program.c:22:22:RPLIDAR_Check_error_tGetHealth	4
+RPLIDAR_program.c:51:22:RPLIDAR_GetDescriptor	4
+RPLIDAR_program.c:77:15:RPLIDAR_DescriptorCheck	3
+RPLIDAR_program.c:99:6:RPLIDAR_voidScanResponse	19
+RPLIDAR_program.c:142:6:RPLIDAR_voidINT	1
+RPLIDAR_program.c:175:6:func_check	3

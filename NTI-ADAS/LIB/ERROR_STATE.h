@@ -24,7 +24,8 @@ typedef enum {
 		OUT_OF_RANG_ERR,
 		NULL_PTR_ERR,
 		SUCCESS,
-		FAILARE
+		FAILARE,
+		NO_RESPONSE
 }ErrorState_t;
 
 

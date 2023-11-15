@@ -1,4 +1,5 @@
 Src/main.o: ../Src/main.c \
- D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/APP/APP_int.h
-
-D:/NTI-Embedded\ System/Automotive\ 4M/GP\ Project/NTI-ADAS/APP/APP_int.h:
+ E:/Mido/Courses/Embedded\ Systems/Embedded\ Systems/NTI\ 4M/Graduation\ Project/project/NTI4M-ADAS_GP/NTI-ADAS/APP/APP_int.h \
+ E:/Mido/Courses/Embedded\ Systems/Embedded\ Systems/NTI\ 4M/Graduation\ Project/project/NTI4M-ADAS_GP/NTI-ADAS/LIB/STD_TYPES.h
+E:/Mido/Courses/Embedded\ Systems/Embedded\ Systems/NTI\ 4M/Graduation\ Project/project/NTI4M-ADAS_GP/NTI-ADAS/APP/APP_int.h:
+E:/Mido/Courses/Embedded\ Systems/Embedded\ Systems/NTI\ 4M/Graduation\ Project/project/NTI4M-ADAS_GP/NTI-ADAS/LIB/STD_TYPES.h:

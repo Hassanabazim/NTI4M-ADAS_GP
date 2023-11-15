@@ -20,10 +20,14 @@
 #include "MEXTI_int.h"
 #include "MAFIO_int.h"
 #include "MSYSTICK_int.h"
+#include "MADC_int.h"
+#include "MUSART_int.h"
 #include "APP_int.h"
 #include "APP_config.h"
 #include "APP_priv.h"
-
+#include "../HAL/HLCD/HLCD_int.h"
+#include "../HAL/HLM35 TEMP/HLM35_int.h"
+#include "../HAL/HRAIN SENSOR/HRAIN_int.h"
 
 
 
@@ -45,10 +49,130 @@
 void App_voidstartApp(void)
 {
 
+	/**********************************************************************************************************************/
+#if (APPLICATION == ADAS_SYSTEM)
+	/**********************************************************************************************************************/
+
 	while (1)
 	{
 
 	}
+	/**********************************************************************************************************************/
+#elif (APPLICATION == ANALOG_SENORS_APP)
+	/**********************************************************************************************************************/
+
+	u8 Local_u8TemperatureDegree, Local_u8WaterLevel;
+	MRCC_enSysClkINIT();
+	MRCC_enEnablePeripheralCLK(MRCC_IOPA);
+	MRCC_enEnablePeripheralCLK(MRCC_ADC1);
+
+	/* LCD */
+	lcd_vidInit();
+
+	/* SYSTICK */
+	MSYSTICK_enInit();
+
+	/* LM35 */
+	MADC_GROUP_t LM35_TEMP =  {MADC_channel0, MADC_SAMPLE_71_5CYCLE, MADC_INDEX_0};
+	LM35_u8TemperatureInit(&LM35_TEMP);
+
+	/* Rain Sensor */
+	MADC_GROUP_t RAIN_SEN  =  {MADC_channel7, MADC_SAMPLE_71_5CYCLE, MADC_INDEX_1};
+	RainSensor_u8Init(&RAIN_SEN);
+
+	MADC_INIT_t Sensors = {MADC_CONTINUES_CONV, MADC_ENABLE,MADC_RIGHT_ALLIGN,MADC_channel1,MADC_SWSTART, MADC_channel0,MADC_JSWSTART};
+	MADC_enInit(&Sensors);
+
+	while (1)
+	{
+		LM35_u16GetTemperature(&Local_u8TemperatureDegree);
+		MSYSTICK_enDelayMS(1);
+		RainSensor_u8GetWaterLevel(&Local_u8WaterLevel);
+
+		// TODO TEMP Action
+		lcd_vidGotoRowColumn(0, 0);
+		lcd_vidDisplyStr("temp =");
+		lcd_vidDisplayNum(Local_u8TemperatureDegree);
+
+		//// TODO RAIN Action
+		lcd_vidGotoRowColumn(1, 0);
+		lcd_vidDisplyStr("rain =");
+		lcd_vidDisplayNum(Local_u8WaterLevel);
+		MSYSTICK_enDelayMS(500);
+		lcd_vidClrDislay();
+	}
+	/**********************************************************************************************************************/
+#elif(APPLICATION == COLLESION_AVOIDENCE)
+	/**********************************************************************************************************************/
+
+
+	while (1)
+	{
+
+
+	}
+
+	/**********************************************************************************************************************/
+#elif(APPLICATION == LANE_KEEPING)
+	/**********************************************************************************************************************/
+
+
+	while (1)
+	{
+
+
+	}
+	/**********************************************************************************************************************/
+#elif(APPLICATION == LANE_CHANGE)
+	/**********************************************************************************************************************/
+
+
+	while (1)
+	{
+
+
+	}
+	/**********************************************************************************************************************/
+#elif(APPLICATION == EMERGENCY_BREAK)
+	/**********************************************************************************************************************/
+
+
+	while (1)
+	{
+
+
+	}
+	/**********************************************************************************************************************/
+#elif(APPLICATION == ADAPTIVE_CURISE_CONTROL)
+	/**********************************************************************************************************************/
+
+
+	while (1)
+	{
+
+
+	}
+
+	/**********************************************************************************************************************/
+#elif(APPLICATION == BLIND_SPOT)
+	/**********************************************************************************************************************/
+
+
+	while (1)
+	{
+
+
+	}
+
+	/**********************************************************************************************************************/
+#elif (APPLICATION == SLEEP_MODE)
+	/**********************************************************************************************************************/
+
+	while (1)
+	{
+
+	}
+#endif
 }
 /**********************************************************************************************************************
  *  END OF FILE: APP_prog.c

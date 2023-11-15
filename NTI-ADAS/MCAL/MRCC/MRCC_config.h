@@ -71,6 +71,17 @@
 #define MRCC_APB2_PRESCALER_MODE	(MRCC_HCLK_NOT_DIV << 11)
 
 /**********************************************************************************************************************
+* PLEASE CHOOSE FROM THE FOLLOWING ADC PRESCALER
+
+		* MRCC_PCLK2_DIV_2
+		* MRCC_PCLK2_DIV_4
+		* MRCC_PCLK2_DIV_6
+		* MRCC_PCLK2_DIV_8
+
+**********************************************************************************************************************/
+#define MRCC_ADC_PRESCALER_MODE		(MRCC_PCLK2_DIV_8 <<14)
+
+/**********************************************************************************************************************
 * PLEASE CHOOSE FROM THE FOLLOWING MCO MODES:
 
 		*  MRCC_MCO_NO_CLK

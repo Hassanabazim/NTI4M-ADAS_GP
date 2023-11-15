@@ -19,6 +19,13 @@ RM := rm -rf
 -include MCAL/MEXTI/subdir.mk
 -include MCAL/MAFIO/subdir.mk
 -include MCAL/MADC/subdir.mk
+-include HAL/RPLIDAR/subdir.mk
+-include HAL/PIR/subdir.mk
+-include HAL/IR/subdir.mk
+-include HAL/HRAIN\ SENSOR/subdir.mk
+-include HAL/HLM35\ TEMP/subdir.mk
+-include HAL/HLCD/subdir.mk
+-include HAL/HIR/subdir.mk
 -include APP/subdir.mk
 -include subdir.mk
 -include objects.mk
@@ -58,6 +65,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 NTI-ADAS.list \
 
+OBJCOPY_HEX += \
+NTI-ADAS.hex \
+
 OBJCOPY_BIN += \
 NTI-ADAS.bin \
 
@@ -69,8 +79,8 @@ all: main-build
 main-build: NTI-ADAS.elf secondary-outputs
 
 # Tool invocations
-NTI-ADAS.elf: $(OBJS) $(USER_OBJS) C:\Users\Hassa\git\NTI4M-ADAS_GP\NTI-ADAS\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "NTI-ADAS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Hassa\git\NTI4M-ADAS_GP\NTI-ADAS\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NTI-ADAS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+NTI-ADAS.elf: $(OBJS) $(USER_OBJS) D:\00-Tools\NTI_GP\NTI-ADAS\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "NTI-ADAS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\00-Tools\NTI_GP\NTI-ADAS\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NTI-ADAS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -84,6 +94,11 @@ NTI-ADAS.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+NTI-ADAS.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "NTI-ADAS.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 NTI-ADAS.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "NTI-ADAS.bin"
 	@echo 'Finished building: $@'
@@ -94,7 +109,7 @@ clean:
 	-$(RM) *
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX) $(OBJCOPY_BIN)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

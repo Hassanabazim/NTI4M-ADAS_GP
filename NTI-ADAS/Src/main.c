@@ -1,9 +1,8 @@
 
+
+#include "APP_int.h"
+
 int main(void)
 {
-
-
-
-    /* Loop forever */
-	for(;;);
+	App_voidstartApp();
 }

@@ -16,6 +16,16 @@
 #define APP_PRIV_H_
 
 
+#define ANALOG_SENORS_APP			0
+#define COLLESION_AVOIDENCE			1
+#define LANE_KEEPING 				2
+#define LANE_CHANGE					3
+#define EMERGENCY_BREAK				4
+#define ADAPTIVE_CURISE_CONTROL		5
+#define BLIND_SPOT					6
+#define SLEEP_MODE					7
+#define ADAS_SYSTEM					8
+
 
 
 #endif /* APP_PRIV_H_ */

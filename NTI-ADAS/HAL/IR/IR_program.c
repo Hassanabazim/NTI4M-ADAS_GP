@@ -1,7 +1,8 @@
 
-#include "../../MCAL/MGPIO/MGPIO_int.h"
-#include "IR_interface.h"
-#include "IR_config.h"
+#include "MGPIO_int.h"
+
+#include "../../HAL/IR/IR_config.h"
+#include "../../HAL/IR/IR_interface.h"
 
 void IR_voidInit(void)
 {

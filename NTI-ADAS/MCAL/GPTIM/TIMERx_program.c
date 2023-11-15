@@ -318,15 +318,17 @@ void TIM3_PWM_Init(void)
 
 /*the used tim 3 PWM generation func */
 void TIM3_PWM_CH1_Generate(u8 copy_u8Duty)
-{	// Configure PWM mode for Channel 1
+{
+	// Configure PWM mode for Channel 1
 	TIM3->CCMR1 |= TIM_CCMR1_OC1M; // PWM mode 1
 	TIM3->CCMR1 |= TIM_CCMR1_OC1PE; // Preload enable
 	TIM3->CCER |= TIM_CCER_CC1E;   // Enable the output for Channel 1
 	// Set the PWM period and duty cycle
 
 
-	TIM3->PSC = 0;             						 // No prescaler
+	TIM3->PSC = 0 ;             						 // No prescaler
 	TIM3->ARR = TIM3_MAX_NUM_OF_TICKS_CH1;           // Period (1 kHz PWM frequency)
+	copy_u8Duty = 100-copy_u8Duty;
 	TIM3->CCR1 = (u16)(((copy_u8Duty/100.0)*(TIM3_MAX_NUM_OF_TICKS_CH1-1))+1);        		 // Duty cycle (50%)
 	// Enable the timer
 	TIM3->CR1 |= TIM_CR1_CEN;
@@ -336,13 +338,14 @@ void TIM3_PWM_CH2_Generate(u8 copy_u8Duty)
 {
 	TIM3->CCMR1 |= TIM_CCMR1_OC2M; // PWM mode 1
 	TIM3->CCMR1 |= TIM_CCMR1_OC2PE; // Preload enable
-	TIM3->CCER |= TIM_CCER_CC2E;   // Enable the output for Channel 2
+	TIM3->CCER  |= TIM_CCER_CC2E;   // Enable the output for Channel 2
 
 
 	// Set the PWM period and duty cycle
 
 	TIM3->PSC = 0;             // No prescaler
 	TIM3->ARR = TIM3_MAX_NUM_OF_TICKS_CH2;           // Period (1 kHz PWM frequency)
+	copy_u8Duty = 100-copy_u8Duty;
 	TIM3->CCR2 = (u16)(((copy_u8Duty/100.0)*(TIM3_MAX_NUM_OF_TICKS_CH1-1))+1);
 	// Enable the timer
 	TIM3->CR1 |= TIM_CR1_CEN;

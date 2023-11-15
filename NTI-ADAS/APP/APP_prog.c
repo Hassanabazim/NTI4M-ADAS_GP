@@ -83,7 +83,8 @@ void App_voidstartApp(void)
 
 	MADC_INIT_t Sensors = {MADC_CONTINUES_CONV, MADC_ENABLE,MADC_RIGHT_ALLIGN,MADC_channel1,MADC_SWSTART, MADC_channel0,MADC_JSWSTART};
 	MADC_enInit(&Sensors);
-
+////buffer
+	u8 Analog_Sensors[2]={0};
 	while (1)
 	{
 		LM35_u16GetTemperature(&Local_u8TemperatureDegree);
@@ -101,6 +102,9 @@ void App_voidstartApp(void)
 		lcd_vidDisplayNum(Local_u8WaterLevel);
 		MSYSTICK_enDelayMS(500);
 		lcd_vidClrDislay();
+	/////save buffer
+		Analog_Sensors[0]=&Local_u8TemperatureDegree;
+		Analog_Sensors[0]=&Local_u8WaterLevel;
 	}
 	/**********************************************************************************************************************/
 #elif(APPLICATION == COLLESION_AVOIDENCE)
@@ -166,13 +170,100 @@ void App_voidstartApp(void)
 	/**********************************************************************************************************************/
 #elif(APPLICATION == BLIND_SPOT)
 	/**********************************************************************************************************************/
-	// step 1
 
-	while (1)
+
+// step 1
+#define  Right_Angle_One	60
+#define  Right_Angle_Two	120
+
+#define	 Left_Angle_One		240
+#define	 Left_Angle_Two		300
+
+#define	 Front_Angle_One	150
+#define	 Front_Angle_Two	210
+
+#define	 Back_Angle_One		330
+#define	 Back_Angle_Two		30
+u16 Distance[5]={0};
+//Get_Distance()
+while(1)
 	{
+	HULTRASONIC_enGetRead(&Distance[0]);
+	Distance[1]=RPLIDAR_voidScanResponse(Right_Angle_One,Right_Angle_Two);
+	Distance[2]=RPLIDAR_voidScanResponse(Left_Angle_One,Left_Angle_Two);
+	Distance[3]=RPLIDAR_voidScanResponse(Front_Angle_One,Front_Angle_Two);
+	Distance[4]=RPLIDAR_voidScanResponse(Back_Angle_One,Back_Angle_Two);
+	}
 
+/*
+	while(1)
+	{
+	if((RPLIDAR_voidScanResponse(45,90)>10 && RPLIDAR_voidScanResponse(45,95)<30) ||
+					(RPLIDAR_voidScanResponse(95,135)>10 && RPLIDAR_voidScanResponse(95,135)<30))
+	{
+		Right_Flag = true;
+	}
+	if((RPLIDAR_voidScanResponse(270,315)>10 && RPLIDAR_voidScanResponse(270,315)<30) ||
+						(RPLIDAR_voidScanResponse(225,270)>10 && RPLIDAR_voidScanResponse(225,270)<30))
+		{
+			Left_Flag = true;
+		}
 
 	}
+*/
+
+	/*
+	while (1)
+	{
+		//check right
+		if((RPLIDAR_voidScanResponse(50,70)>10 && RPLIDAR_voidScanResponse(50,70)<30) ||
+				(RPLIDAR_voidScanResponse(70,90)>10 && RPLIDAR_voidScanResponse(70,90)<30) ||
+				(RPLIDAR_voidScanResponse(90,110)>10 && RPLIDAR_voidScanResponse(90,110)<30) ||
+				(RPLIDAR_voidScanResponse(110,130)>10 && RPLIDAR_voidScanResponse(110,130)<30)
+				)
+		{
+			Right_Flag= true;
+		}
+
+		//else
+		//{
+			//check left
+			if((RPLIDAR_voidScanResponse(290,310)>10 && RPLIDAR_voidScanResponse(290,310)<30) ||
+				(RPLIDAR_voidScanResponse(270,290)>10 && RPLIDAR_voidScanResponse(270,290)<30) ||
+				(RPLIDAR_voidScanResponse(250,270)>10 && RPLIDAR_voidScanResponse(250,270)<30) ||
+				(RPLIDAR_voidScanResponse(230,250)>10 && RPLIDAR_voidScanResponse(230,250)<30)
+				)
+			{
+				Left_Flag= true;
+			} */
+
+		//}
+//		else
+//		{
+//			if(RPLIDAR_voidScanResponse(70,90)>10 && RPLIDAR_voidScanResponse(70,90)<30)
+//			{
+//				//turn left
+//			}
+//			else
+//			{	if(RPLIDAR_voidScanResponse(90,110)>10 && RPLIDAR_voidScanResponse(90,110)<30)
+//			{
+//				//turn left
+//			}
+//			else
+//			{
+//				if(RPLIDAR_voidScanResponse(110,130)>10 && RPLIDAR_voidScanResponse(110,130)<30)
+//			{
+//				//turn left
+//			}
+//
+//			}
+//
+//			}
+//
+//		}
+
+
+	//}
 
 	/**********************************************************************************************************************/
 #elif (APPLICATION == SLEEP_MODE)

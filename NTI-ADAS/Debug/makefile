@@ -12,6 +12,7 @@ RM := rm -rf
 -include Startup/subdir.mk
 -include Src/subdir.mk
 -include MCAL/MUSART/subdir.mk
+-include MCAL/MTIM1/subdir.mk
 -include MCAL/MSYSTICK/subdir.mk
 -include MCAL/MRCC/subdir.mk
 -include MCAL/MNVIC/subdir.mk
@@ -19,13 +20,15 @@ RM := rm -rf
 -include MCAL/MEXTI/subdir.mk
 -include MCAL/MAFIO/subdir.mk
 -include MCAL/MADC/subdir.mk
--include HAL/RPLIDAR/subdir.mk
--include HAL/PIR/subdir.mk
--include HAL/IR/subdir.mk
+-include MCAL/GPTIM/subdir.mk
+-include HAL/HULTRASONIC/subdir.mk
+-include HAL/HRPLIDAR/subdir.mk
 -include HAL/HRAIN\ SENSOR/subdir.mk
+-include HAL/HPIR/subdir.mk
 -include HAL/HLM35\ TEMP/subdir.mk
 -include HAL/HLCD/subdir.mk
 -include HAL/HIR/subdir.mk
+-include HAL/DC\ MOTOR/subdir.mk
 -include APP/subdir.mk
 -include subdir.mk
 -include objects.mk
@@ -79,8 +82,8 @@ all: main-build
 main-build: NTI-ADAS.elf secondary-outputs
 
 # Tool invocations
-NTI-ADAS.elf: $(OBJS) $(USER_OBJS) D:\NTI-Embedded\ System\Automotive\ 4M\GP\ Project\NTI-ADAS\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "NTI-ADAS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\NTI-Embedded System\Automotive 4M\GP Project\NTI-ADAS\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NTI-ADAS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+NTI-ADAS.elf: $(OBJS) $(USER_OBJS) C:\Users\ITUnit\ FCI\Desktop\project\NTI-ADAS\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "NTI-ADAS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\ITUnit FCI\Desktop\project\NTI-ADAS\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NTI-ADAS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

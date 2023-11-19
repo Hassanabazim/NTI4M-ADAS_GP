@@ -1,8 +1,13 @@
 
 #include "MGPIO_int.h"
+<<<<<<< HEAD:NTI-ADAS/HAL/HIR/IR_program.c
 
 #include "IR_config.h"
 #include "IR_interface.h"
+=======
+#include "IR_interface.h"
+#include "IR_config.h"
+>>>>>>> 06a19209e3da1b6b361a98f266695d6a5388eb5e:HAL/HIR/IR_program.c
 
 void IR_voidInit(void)
 {

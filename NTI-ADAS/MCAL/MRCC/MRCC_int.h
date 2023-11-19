@@ -15,6 +15,7 @@
 #ifndef MRCC_INT_H_
 #define MRCC_INT_H_
 
+#include "ERROR_STATE.h"
 
 /**********************************************************************************************************************
  *  GLOBAL CONSTANT MACROS

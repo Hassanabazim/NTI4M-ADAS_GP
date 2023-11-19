@@ -4,10 +4,9 @@
 #include "MRCC_int.h"
 #include "MSYSTICK_int.h"
 #include "MUSART_int.h"
-
-#include "../HRPLIDAR/RPLIDAR_config.h"
-#include "../HRPLIDAR/RPLIDAR_interface.h"
-#include "../HRPLIDAR/RPLIDAR_private.h"
+#include "RPLIDAR_interface.h"
+#include "RPLIDAR_config.h"
+#include "RPLIDAR_private.h"
 
 
          /*      Initialization Parameters     */
@@ -84,11 +83,11 @@ Check_error_t RPLIDAR_DescriptorCheck(void)
 	}
 	flag_s=RPLIDAR_GetDescriptor();
 	MSYSTICK_enDelayMS(1000);
-	MGPIO_enSetPinValue(PORTA,PIN0,LOW);
+	MGPIO_enSetPinValue(PORTB, PIN10,LOW);
 	MSYSTICK_enDelayMS(1000);
 	if(flag_s==OK)
 	{
-		MGPIO_enSetPinValue(PORTA,PIN0,HIGH);
+		MGPIO_enSetPinValue(PORTB, PIN10,HIGH);
 	}
 	return flag_s;
 }
@@ -141,15 +140,10 @@ void RPLIDAR_voidScanResponse(float angle1, float angle2)
  * */
 void RPLIDAR_voidINT(void)
 {
-	MRCC_enSysClkINIT();
-	MSYSTICK_enInit();
-	MRCC_enEnablePeripheralCLK(MRCC_AFIO);
-	MRCC_enEnablePeripheralCLK(MRCC_IOPA);
-	MRCC_enEnablePeripheralCLK(MRCC_IOPB);
 	/* Enable UART2*/
 	MRCC_enEnablePeripheralCLK(MRCC_USART2);
 	/*Set Pin Direction for LED*/
-	MGPIO_enSetPinDirection(PORTA, PIN0,OUT_2MHZ_PUSH_PULL);
+	MGPIO_enSetPinDirection(PORTB, PIN10,OUT_2MHZ_PUSH_PULL);
 	/*Set Pin Direction for UART2*/
 	MGPIO_enSetPinDirection(MUSART2_TX_PIN,OUT_2MHZ_AF_PUSH_PULL);
 	MGPIO_enSetPinDirection(MUSART2_RX_PIN,IN_FLOATING);
@@ -172,16 +166,15 @@ void RPLIDAR_voidINT(void)
 /*            ***Check Function***
  * */
 
-void func_check(void)
+/*The aim of the function getter is to return a global variable
+ * return the distance value by mm
+ * */
+
+float RPLIDAR_GetDistanceValue(float angle1, float angle2)
 {
-	RPLIDAR_voidScanResponse(180.0,190.0);
-	if(Copy_floatDistance<500)
-	{
-		MGPIO_enSetPinValue(PORTA,PIN0,LOW);
-	}
-	 if(Copy_floatDistance>=700)
-	{
-		 MGPIO_enSetPinValue(PORTA,PIN0,HIGH);
-	}
+	RPLIDAR_voidScanResponse(angle1,angle2);
+	return Copy_floatDistance;
 }
+
+
 

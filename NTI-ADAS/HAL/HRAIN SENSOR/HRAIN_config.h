@@ -9,8 +9,8 @@
 #define HRAIN_CONFIG_H_
 
 
-#define HRAIN_PORT		PORTA
-#define HRAIN_PIN		PIN7
+#define HRAIN_PORT		PORTB
+#define HRAIN_PIN		PIN1
 
 /* In milli_volt assign these*/
 #define RAIN_SENSOR_NO_RAIN					0

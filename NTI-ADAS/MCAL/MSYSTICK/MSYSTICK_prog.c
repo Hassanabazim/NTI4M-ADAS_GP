@@ -193,7 +193,7 @@ ErrorState_t MSYSTICK_enSetIntervalPeriodic(u32 copy_u32TicksNum,void(*ptrfn)(vo
 	{
 		MSYSTICK_Callback = ptrfn;
 		global_u8flag = 0;
-		STK->STK_LOAD = copy_u32TicksNum;
+		STK->STK_LOAD = copy_u32TicksNum -1;
 		SET_BIT(STK->STK_CTRL, ENABLE);
 		SET_BIT(STK->STK_CTRL, TICKINT);
 	}

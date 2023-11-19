@@ -1,6 +1,6 @@
 
 
-#include "../../MCAL/MGPIO/MGPIO_int.h"
+//#include "../../MCAL/MGPIO/MGPIO_int.h"
 
 #ifndef IR_INTERFACE_H_
 #define IR_INTERFACE_H_

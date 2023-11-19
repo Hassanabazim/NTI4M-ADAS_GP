@@ -60,7 +60,7 @@ ErrorState_t RainSensor_u8GetWaterLevel(u8 *Copy_u8pStoreVariable)
 		Local_u16AdcChannelReading = ((Local_u16AdcChannelReading * HRAIN_SENSOR_PERCENTAGE)/ HRAIN_SENSOR_RESOULTION);
 
 		*Copy_u8pStoreVariable = Local_u16AdcChannelReading;
-		/*if(Local_u16AdcChannelReading == RAIN_SENSOR_NO_RAIN )
+		if(Local_u16AdcChannelReading == RAIN_SENSOR_NO_RAIN )
 		{
 		 *Copy_u8pStoreVariable = WATER_NO_LEVEL;
 		}
@@ -79,7 +79,7 @@ ErrorState_t RainSensor_u8GetWaterLevel(u8 *Copy_u8pStoreVariable)
 		else
 		{
 			Local_u8ErrorState  = FAILARE;
-		}*/
+		}
 	}
 	else
 	{

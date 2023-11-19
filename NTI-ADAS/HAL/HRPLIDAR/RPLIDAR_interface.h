@@ -16,5 +16,6 @@ void RPLIDAR_voidScanResponse(float angle1, float angle2);
 void func_check(void);
 void RPLIDAR_voidINT(void);
 Check_error_t RPLIDAR_DescriptorCheck(void);
+float RPLIDAR_GetDistanceValue(float angle1, float angle2);
 
 #endif

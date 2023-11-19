@@ -10,7 +10,7 @@
 
 
 #define HLM35_PORT		PORTA
-#define HLM35_PIN		PIN0
+#define HLM35_PIN		PIN7
 
 
 

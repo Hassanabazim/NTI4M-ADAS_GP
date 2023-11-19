@@ -5,9 +5,9 @@
 #include "MSYSTICK_int.h"
 #include "MUSART_int.h"
 
-#include "../HRPLIDAR/RPLIDAR_config.h"
-#include "../HRPLIDAR/RPLIDAR_interface.h"
-#include "../HRPLIDAR/RPLIDAR_private.h"
+#include "RPLIDAR_config.h"
+#include "RPLIDAR_interface.h"
+#include "RPLIDAR_private.h"
 
 
          /*      Initialization Parameters     */
@@ -172,16 +172,15 @@ void RPLIDAR_voidINT(void)
 /*            ***Check Function***
  * */
 
-void func_check(void)
+/*The aim of the function getter is to return a global variable
+ * return the distance value by mm
+ * */
+
+f32 RPLIDAR_GetDistanceValue(float angle1, float angle2)
 {
-	RPLIDAR_voidScanResponse(180.0,190.0);
-	if(Copy_floatDistance<500)
-	{
-		MGPIO_enSetPinValue(PORTA,PIN0,LOW);
-	}
-	 if(Copy_floatDistance>=700)
-	{
-		 MGPIO_enSetPinValue(PORTA,PIN0,HIGH);
-	}
+	RPLIDAR_voidScanResponse(angle1,angle2);
+	return Copy_floatDistance;
 }
+
+
 

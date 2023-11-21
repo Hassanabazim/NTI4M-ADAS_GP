@@ -4,14 +4,8 @@
 #include "MRCC_int.h"
 #include "MSYSTICK_int.h"
 #include "MUSART_int.h"
-<<<<<<< HEAD:NTI-ADAS/HAL/HRPLIDAR/RPLIDAR_program.c
 #include "RPLIDAR_interface.h"
 #include "RPLIDAR_config.h"
-=======
-
-#include "RPLIDAR_config.h"
-#include "RPLIDAR_interface.h"
->>>>>>> 06a19209e3da1b6b361a98f266695d6a5388eb5e:HAL/HRPLIDAR/RPLIDAR_program.c
 #include "RPLIDAR_private.h"
 
 
@@ -176,11 +170,7 @@ void RPLIDAR_voidINT(void)
  * return the distance value by mm
  * */
 
-<<<<<<< HEAD:NTI-ADAS/HAL/HRPLIDAR/RPLIDAR_program.c
 float RPLIDAR_GetDistanceValue(float angle1, float angle2)
-=======
-f32 RPLIDAR_GetDistanceValue(float angle1, float angle2)
->>>>>>> 06a19209e3da1b6b361a98f266695d6a5388eb5e:HAL/HRPLIDAR/RPLIDAR_program.c
 {
 	RPLIDAR_voidScanResponse(angle1,angle2);
 	return Copy_floatDistance;

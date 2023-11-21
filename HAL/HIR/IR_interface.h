@@ -13,7 +13,7 @@ typedef enum{
 
 void IR_voidInit(void);
 IR_PinValue_t IR_IR_PinValueReadLeft(void);
-IR_PinValue_t IR_IR_PinValueReadRIGH(void);
+IR_PinValue_t IR_IR_PinValueReadRight(void);
 
 #endif
 

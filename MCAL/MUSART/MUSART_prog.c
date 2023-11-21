@@ -266,7 +266,6 @@ u8 MUSART_enBusyReceiveByte(MUSART_t copy_u8USARTnum)
 	 *	2. get the Data from Data Register AND with 1Byte
 	 * 	3. Assign the value into the ptr_u8Data to be returned as ptr
 	 * 	4. the flag is cleared by reading the Data from the register		*/
-	ErrorState_t local_state = SUCCESS;
 	u8 local_u8byte;
 	if (copy_u8USARTnum <= MUSART3)
 	{
@@ -281,6 +280,18 @@ u8 MUSART_enBusyReceiveByte(MUSART_t copy_u8USARTnum)
 	return local_u8byte;
 }
 
+ErrorState_t MUSART_enBusyReceivestr(MUSART_t copy_u8USARTnum, u8 buffer[], u8 buffer_size)
+{
+	ErrorState_t local_u8state = SUCCESS;
+	u8 buffer_Index = 0;
+	while (buffer_Index < buffer_size)
+	{
+		buffer[buffer_Index] = MUSART_enBusyReceiveByte(copy_u8USARTnum);
+		buffer_Index++;
+	}
+
+	return local_u8state;
+}
 /******************************************************************************
  * \Syntax          : ErrorState_t MUSART_enEnableInt
  * 							(MUSART_t copy_u8USARTnum, MUSART_INT_t copy_u8Intnum)

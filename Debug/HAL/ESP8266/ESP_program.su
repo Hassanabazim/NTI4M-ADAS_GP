@@ -1,0 +1,4 @@
+ESP_program.c:12:14:ESP_voidInit	32	static
+ESP_program.c:76:14:ESP_VoidConnectToWiFi	280	static
+ESP_program.c:107:6:ESP_VidConnectToSrvTcp	48	static
+ESP_program.c:121:14:ESP_u8ReceiveHttpReq	88	static

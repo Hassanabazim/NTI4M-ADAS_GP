@@ -28,8 +28,16 @@ RM := rm -rf
 -include HAL/HLM35\ TEMP/subdir.mk
 -include HAL/HLCD/subdir.mk
 -include HAL/HIR/subdir.mk
+-include HAL/ESP8266/subdir.mk
 -include HAL/DC\ MOTOR/subdir.mk
--include APP/subdir.mk
+-include APP/SleepMode/subdir.mk
+-include APP/MobileApplication/subdir.mk
+-include APP/LaneKeepAssist/subdir.mk
+-include APP/EmergencyBreak/subdir.mk
+-include APP/Collesion_Avoidence/subdir.mk
+-include APP/Blindspot/subdir.mk
+-include APP/Analog_Sensor/subdir.mk
+-include APP/Adaptive_CC/subdir.mk
 -include subdir.mk
 -include objects.mk
 

@@ -1,0 +1,2 @@
+Analog_prog.c:19:6:AnalogSensor_voidInit	24	static
+Analog_prog.c:41:6:AnalogSensor_voidAction	16	static

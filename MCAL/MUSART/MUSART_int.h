@@ -88,8 +88,9 @@ typedef enum
 
 ErrorState_t MUSART_enInit(MUSART_t copy_u8USARTnum, MUSART_INIT_t *ptr_u8cfg);
 ErrorState_t MUSART_enBusySendByte(MUSART_t copy_u8USARTnum, u8 copy_u8Data);
-ErrorState_t MUSART_enSendMessage(MUSART_t copy_u8USARTnum, u8 *copy_u8msg);
+ErrorState_t MUSART_enBusySendString(MUSART_t copy_u8USARTnum, u8 *copy_u8Data);
 u8 MUSART_enBusyReceiveByte(MUSART_t copy_u8USARTnum);
+ErrorState_t MUSART_enBusyReceivestr(MUSART_t copy_u8USARTnum, u8 buffer[], u8 buffer_size);
 ErrorState_t MUSART_enEnableInt(MUSART_t copy_u8USARTnum, MUSART_INT_t copy_u8Intnum);
 ErrorState_t MUSART_enDisableInt(MUSART_t copy_u8USARTnum, MUSART_INT_t copy_u8Intnum);
 ErrorState_t MUSART_enSendMessage(MUSART_t copy_u8USARTnum, u8 *copy_u8msg);

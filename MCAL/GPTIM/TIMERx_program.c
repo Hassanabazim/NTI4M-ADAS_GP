@@ -311,8 +311,8 @@ void TIM3_PWM_Init(void)
 	/* Pin configuration for PWM */
 	/*** Channel one configuration ***/
 	MGPIO_enSetPinDirection(PORTA, PIN6, OUT_2MHZ_AF_PUSH_PULL);
-	/*** Channel one configuration ***/
-	MGPIO_enSetPinDirection(PORTA, PIN7, OUT_2MHZ_AF_PUSH_PULL);
+//	/*** Channel one configuration ***/
+//	MGPIO_enSetPinDirection(PORTA, PIN7, OUT_2MHZ_AF_PUSH_PULL);
 
 	/*******************************************************************/
 	// Configure the PWM mode for TIM3

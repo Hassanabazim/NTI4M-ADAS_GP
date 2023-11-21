@@ -21,8 +21,16 @@ OBJCOPY_BIN :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-APP \
+APP/Adaptive_CC \
+APP/Analog_Sensor \
+APP/Blindspot \
+APP/Collesion_Avoidence \
+APP/EmergencyBreak \
+APP/LaneKeepAssist \
+APP/MobileApplication \
+APP/SleepMode \
 HAL/DC\ MOTOR \
+HAL/ESP8266 \
 HAL/HIR \
 HAL/HLCD \
 HAL/HLM35\ TEMP \

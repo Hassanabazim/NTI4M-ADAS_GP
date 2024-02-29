@@ -1,3 +1,0 @@
-Blindspot_prog.c:18:6:ADAS_voidBlindspot_Init	8	static
-Blindspot_prog.c:26:6:ADAS_Distance_Manager	8	static
-Blindspot_prog.c:35:6:ADAS_voidBlindspot_status	8	static

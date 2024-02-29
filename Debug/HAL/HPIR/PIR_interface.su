@@ -1,2 +1,0 @@
-PIR_interface.c:8:6:PIR_voidInit	8	static
-PIR_interface.c:13:4:PIR_u8GetPinVal	16	static

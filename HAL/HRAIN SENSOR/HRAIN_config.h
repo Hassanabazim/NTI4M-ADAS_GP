@@ -14,8 +14,8 @@
 
 /* In milli_volt assign these*/
 #define RAIN_SENSOR_NO_RAIN					0
-#define RAIN_SENSOR_LOW_LEVEL				20
-#define RAIN_SENSOR_MIDDLE_LEVEL			70
+#define RAIN_SENSOR_LOW_LEVEL				10
+#define RAIN_SENSOR_MIDDLE_LEVEL			50
 #define RAIN_SENSOR_HIGH_LEVEL 				100
 
 

@@ -30,41 +30,31 @@ void ADAS_laneKeeping(void)
 	IR_PinValue_t leftIRValue = IR_IR_PinValueReadLeft();
 	IR_PinValue_t rightIRValue = IR_IR_PinValueReadRight();
 
-	if(leftIRValue== IR_HIGH && rightIRValue==IR_HIGH)
+
+	if (leftIRValue== IR_HIGH && rightIRValue == IR_HIGH)
 	{
 		HDCMOTOR_voidDiretionalStop(); //forward wheel   no left no right
-		HDCMOTOR_voidForward(); //back wheel
 		TIM3_PWM_CH1_Generate(90); //speed
+		HDCMOTOR_voidForward(); //back wheel
 	}
 	else if (leftIRValue == IR_LOW && rightIRValue==IR_HIGH)
 	{
-		HDCMOTOR_voidForwardBackwardStop();
 		HDCMOTOR_voidTurnRight();
+		TIM3_PWM_CH1_Generate(90);
 		HDCMOTOR_voidForward();
-		TIM3_PWM_CH1_Generate(70);
-
-		if(leftIRValue== IR_HIGH && rightIRValue==IR_HIGH)
-		{
-			HDCMOTOR_voidForward();
-			TIM3_PWM_CH1_Generate(90);
-		}
 
 	}
-	else if (rightIRValue == IR_LOW && leftIRValue== IR_HIGH)
+	else if (rightIRValue == IR_LOW && leftIRValue == IR_HIGH)
 	{
-		HDCMOTOR_voidForwardBackwardStop();
 		HDCMOTOR_voidTurnLeft();
+		TIM3_PWM_CH1_Generate(90);
 		HDCMOTOR_voidForward();
-		TIM3_PWM_CH1_Generate(70);
-		if(leftIRValue== IR_HIGH && rightIRValue==IR_HIGH)
-		{
-			HDCMOTOR_voidForward();
-			TIM3_PWM_CH1_Generate(90);
-		}
 	}
 	else
 	{
+		HDCMOTOR_voidDiretionalStop(); //forward wheel   no left no right
 		HDCMOTOR_voidForwardBackwardStop();
+
 	}
 
 
@@ -74,6 +64,7 @@ void ADAS_LaneChange(void)
 {
 	IR_PinValue_t leftIRValue2 = IR_IR_PinValueReadLeft();
 	IR_PinValue_t rightIRValue2 = IR_IR_PinValueReadRight();
+
 	u16 average =  ((Dist_MG[0] + Dist_MG[3]) / 2);
 	if (average < 30 && LaneState == LANE_KEEPING)
 	{

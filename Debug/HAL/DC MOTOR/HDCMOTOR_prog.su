@@ -1,7 +1,0 @@
-HDCMOTOR_prog.c:10:6:HDCMOTOR_voidInit	8	static
-HDCMOTOR_prog.c:20:6:HDCMOTOR_voidForward	8	static
-HDCMOTOR_prog.c:31:6:HDCMOTOR_voidBackward	8	static
-HDCMOTOR_prog.c:42:6:HDCMOTOR_voidTurnRight	8	static
-HDCMOTOR_prog.c:49:6:HDCMOTOR_voidTurnLeft	8	static
-HDCMOTOR_prog.c:61:6:HDCMOTOR_voidDiretionalStop	8	static
-HDCMOTOR_prog.c:68:6:HDCMOTOR_voidForwardBackwardStop	8	static

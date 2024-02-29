@@ -24,16 +24,16 @@
 
 #define	 Back_Angle_One			330
 #define	 Back_Angle_Two			30
-#define  MIN_Distance			30
+#define  MIN_Distance			300
 
-#define  MAX_Distance			50
-#define  Second_MIN_Distance	70
-#define  Second_MAX_Distance	100
+#define  MAX_Distance			500
+#define  Second_MIN_Distance	700
+#define  Second_MAX_Distance	1000
 #define  Object					1
 #define  NO_Object				0
 
 void ADAS_voidBlindspot_Init(void);
-void ADAS_voidBlindspot(void);
+void ADAS_voidBlindspot_status(void);
 void ADAS_Distance_Manager(void);
 
 #endif /* BLINDSPOT_BLINDSPOT_INT_H_ */

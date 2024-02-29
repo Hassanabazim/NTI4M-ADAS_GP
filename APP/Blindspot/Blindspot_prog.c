@@ -13,7 +13,7 @@
 #include "Blindspot_int.h"
 
 u8 Indication[7]=	{0};
-u16 Dist_MG[5] = {0};
+f32 Dist_MG[5] = {0};
 
 void ADAS_voidBlindspot_Init(void)
 {
@@ -42,8 +42,10 @@ void ADAS_voidBlindspot_status(void)
 	}
 	else
 	{
+		//MGPIO_enSetPinValue(RIGHT_LED, LOW);
 		Indication[1] = NO_Object;
 	}
+	//front
 	//Left=Distance[2]
 	if( Dist_MG[2] > MIN_Distance && Dist_MG[1] < MAX_Distance )
 	{
@@ -52,6 +54,7 @@ void ADAS_voidBlindspot_status(void)
 	}
 	else
 	{
+		//MGPIO_enSetPinValue(LEFT_LED, LOW);
 		Indication[2]=NO_Object;
 	}
 	//Front=Distance[3]
@@ -63,6 +66,8 @@ void ADAS_voidBlindspot_status(void)
 	else
 	{
 		Indication[3]=NO_Object;
+		//MGPIO_enSetPinValue(FRONT_LED, LOW);
+
 	}
 	//Back=Distance[4]
 	if( Dist_MG[4] > MIN_Distance && Dist_MG[4] < MAX_Distance )
@@ -72,12 +77,12 @@ void ADAS_voidBlindspot_status(void)
 	}
 	else
 	{
+		//MGPIO_enSetPinValue(BACK_LED, LOW);
 		Indication[4]=NO_Object;
 	}
 	//MAX_Right=Distance[5]
 	if( Dist_MG[1] > Second_MIN_Distance && Dist_MG[1] < Second_MAX_Distance )
 	{
-		MGPIO_enSetPinValue(RIGHT_LED, HIGH);
 		Indication[5] = Object;
 	}
 	else
@@ -87,7 +92,6 @@ void ADAS_voidBlindspot_status(void)
 	//MAX_Left=Distance[6]
 	if( Dist_MG[2]  > Second_MIN_Distance && Dist_MG[2] < Second_MAX_Distance )
 	{
-		MGPIO_enSetPinValue(LEFT_LED, HIGH);
 		Indication[6] = Object;
 	}
 	else

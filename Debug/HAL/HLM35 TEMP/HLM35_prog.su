@@ -1,3 +1,0 @@
-HLM35_prog.c:24:14:LM35_u8TemperatureInit	24	static
-HLM35_prog.c:49:14:LM35_u16GetTemperature	24	static
-HLM35_prog.c:74:5:ADC_u16ConvertToVolt	24	static

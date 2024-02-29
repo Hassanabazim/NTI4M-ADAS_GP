@@ -64,6 +64,11 @@ void TIM3_PWM_CH2_Generate(u8 copy_u8Duty);
 void TIM3_PWM_CH1_Change_Duty(u16 copy_u16DutyPercentege);
 void TIM3_PWM_CH2_Change_Duty(u16 copy_u16DutyPercentege);
 
+/* IBRAHIM */
+void TIM2_PWM_Init(void);
+u16 map(u16 value, u16 fromLow, u16 fromHigh, u16 toLow, u16 toHigh);
+void TIM2_SetPulseWidth(u8 pulseWidth);
+//void setServoAngle(u8 angle);
 
 
 #endif /* MCAL_TIMERX_TIMERX_INTERFACE_H_ */

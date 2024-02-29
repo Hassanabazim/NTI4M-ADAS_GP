@@ -246,7 +246,7 @@ ErrorState_t MGPIO_enTogglePin(MGPIO_PORT_t copy_u8port, MGPIO_PIN_t copy_u8pin)
  * \Return value:   : ErrorState_t  -> SUCEESS
  * 								   -> OUT_OF_RANG_ERR
  *******************************************************************************/
-ErrorState_t MGPIO_enGetPinValue(MGPIO_PORT_t copy_u8port, MGPIO_PIN_t copy_u8pin, MGPIO_VALUE_t *pinValue)
+ErrorState_t MGPIO_enGetPinValue(MGPIO_PORT_t copy_u8port, MGPIO_PIN_t copy_u8pin, u8 *pinValue)
 {
 	ErrorState_t local_state = SUCCESS;
 

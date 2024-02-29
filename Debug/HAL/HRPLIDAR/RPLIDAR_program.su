@@ -1,6 +1,0 @@
-RPLIDAR_program.c:21:22:RPLIDAR_Check_error_tGetHealth	32	static
-RPLIDAR_program.c:50:22:RPLIDAR_GetDescriptor	32	static
-RPLIDAR_program.c:76:15:RPLIDAR_DescriptorCheck	16	static
-RPLIDAR_program.c:98:6:RPLIDAR_voidScanResponse	24	static
-RPLIDAR_program.c:141:6:RPLIDAR_voidINT	16	static
-RPLIDAR_program.c:173:7:RPLIDAR_GetDistanceValue	16	static

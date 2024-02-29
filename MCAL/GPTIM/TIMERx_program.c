@@ -6,10 +6,10 @@
  */
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
-#include "MGPIO_int.h"
 #include "TIMERx_config.h"
 #include "TIMERx_private.h"
 #include "TIMERx_interface.h"
+#include "MGPIO_int.h"
 
 
 
@@ -306,15 +306,46 @@ void TIM2_IRQHandler(void) {
 
 
 
+
+
+
+
+/****  IBRAHIM ###########################################################***************************/
+void TIM2_PWM_Init(void)
+{
+/* enable RCC timer2*/
+	MGPIO_enSetPinDirection(PORTA, PIN1, OUT_2MHZ_AF_PUSH_PULL);
+    TIM2->PSC = 1599;   // Set the prescaler value
+    TIM2->ARR = 99;     // Set the auto-reload value
+    TIM2->CCMR1 |= TIM_CCMR1_OC2M_1 | TIM_CCMR1_OC2M_2; // Set PWM mode 1
+    TIM2->CCMR1 |= TIM_CCMR1_OC2PE;   // Enable preload for CCR2
+    TIM2->CCER |= TIM_CCER_CC2E;      // Enable the capture/compare output
+
+    TIM2->CR1 |= TIM_CR1_ARPE;  // Enable auto-reload preload
+    TIM2->CR1 &= ~TIM_CR1_DIR;  // Count up
+    TIM2->CR1 |= TIM_CR1_CEN;   // Enable the timer
+}
+
+void TIM2_SetPulseWidth(u8 pulseWidth)
+{
+    TIM2->CCR2 = pulseWidth;
+}
+// Function to map a value from one range to another
+u16 map(u16 value, u16 fromLow, u16 fromHigh, u16 toLow, u16 toHigh)
+{
+    return (value - fromLow) * (toHigh - toLow) / (fromHigh - fromLow) + toLow;
+}
+
+void setServoAngle(u8 angle)
+{
+    // Map the servo angle to CCR2 values
+    u8 pulseWidth = map(angle, 0, 180, 1, 175);
+    TIM2_SetPulseWidth(pulseWidth);
+}
+/**###########################################################****************************************/
+
 void TIM3_PWM_Init(void)
 {
-	/* Pin configuration for PWM */
-	/*** Channel one configuration ***/
-	MGPIO_enSetPinDirection(PORTA, PIN6, OUT_2MHZ_AF_PUSH_PULL);
-//	/*** Channel one configuration ***/
-//	MGPIO_enSetPinDirection(PORTA, PIN7, OUT_2MHZ_AF_PUSH_PULL);
-
-	/*******************************************************************/
 	// Configure the PWM mode for TIM3
 	TIM3->CR1 &= ~TIM_CR1_DIR; // Count up mode
 	TIM3->CR1 &= ~TIM_CR1_CMS; // Edge-aligned mode
@@ -326,38 +357,64 @@ void TIM3_PWM_Init(void)
 
 /*the used tim 3 PWM generation func */
 void TIM3_PWM_CH1_Generate(u8 copy_u8Duty)
-{	// Configure PWM mode for Channel 1
-	TIM3->CCMR1 |= TIM_CCMR1_OC1M; 		// PWM mode 1
-	TIM3->CCMR1 |= TIM_CCMR1_OC1PE; 	// Preload enable
-	TIM3->CCER  |= TIM_CCER_CC1E;   		// Enable the output for Channel 1
+{
+	// Configure PWM mode for Channel 1
+	TIM3->CCMR1 |= TIM_CCMR1_OC1M; // PWM mode 1
+	TIM3->CCMR1 |= TIM_CCMR1_OC1PE; // Preload enable
+	TIM3->CCER |= TIM_CCER_CC1E;   // Enable the output for Channel 1
 	// Set the PWM period and duty cycle
 
-	copy_u8Duty = 100 - copy_u8Duty;
 
-	TIM3->PSC = 0;             						 // No prescaler
+	TIM3->PSC = 0 ;             						 // No prescaler
 	TIM3->ARR = TIM3_MAX_NUM_OF_TICKS_CH1;           // Period (1 kHz PWM frequency)
-	TIM3->CCR1 = (u16)(((copy_u8Duty/100.0)*(TIM3_MAX_NUM_OF_TICKS_CH1-1))+1);
+	copy_u8Duty = 100-copy_u8Duty;
+	TIM3->CCR1 = (u16)(((copy_u8Duty/100.0)*(TIM3_MAX_NUM_OF_TICKS_CH1-1))+1);        		 // Duty cycle (50%)
 	// Enable the timer
 	TIM3->CR1 |= TIM_CR1_CEN;
 }
 
+
+
 void TIM3_PWM_CH2_Generate(u8 copy_u8Duty)
 {
-	TIM3->CCMR1 |= TIM_CCMR1_OC2M; 			// PWM mode 1
-	TIM3->CCMR1 |= TIM_CCMR1_OC2PE; 		// Preload enable
-	TIM3->CCER  |= TIM_CCER_CC2E;   		// Enable the output for Channel 2
+	TIM3->CCMR1 |= TIM_CCMR1_OC2M; // PWM mode 1
+	TIM3->CCMR1 |= TIM_CCMR1_OC2PE; // Preload enable
+	TIM3->CCER  |= TIM_CCER_CC2E;   // Enable the output for Channel 2
 
 
 	// Set the PWM period and duty cycle
-	copy_u8Duty = 100 - copy_u8Duty;
 
-	TIM3->PSC = 0;            						 // No prescaler
+	TIM3->PSC = 0;             // No prescaler
 	TIM3->ARR = TIM3_MAX_NUM_OF_TICKS_CH2;           // Period (1 kHz PWM frequency)
+	copy_u8Duty = 100-copy_u8Duty;
 	TIM3->CCR2 = (u16)(((copy_u8Duty/100.0)*(TIM3_MAX_NUM_OF_TICKS_CH1-1))+1);
 	// Enable the timer
 	TIM3->CR1 |= TIM_CR1_CEN;
 }
 
+
+/*this function takes the percentage of duty cycle in (%) to change from default
+ * Ex:1-10
+ * 	  2-20
+ * 	  3-30
+ * ETC...
+ **/
+//void TIM3_PWM_CH1_Change_Duty(u16 copy_u16DutyPercentege)
+//{
+//	TIM3->CCR1 = 0;
+//	TIM3->CCR1 = copy_u16DutyPercentege;//(u16)(((f32)(copy_u16DutyPercentege/100.0)*(TIM3_MAX_NUM_OF_TICKS_CH1+1))-1);
+//}
+//
+///*this function takes the percentage of duty cycle in (%) to change from default
+// * Ex:1-10
+// * 	  2-20
+// * 	  3-30
+// * ETC...
+// **/
+//void TIM3_PWM_CH2_Change_Duty(u16 copy_u16DutyPercentege)
+//{
+//	TIM3->CCR2 = (((u16)(copy_u16DutyPercentege/100.0)*(TIM3_MAX_NUM_OF_TICKS_CH2+1))-1);
+//}
 
 
 
